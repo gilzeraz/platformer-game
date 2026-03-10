@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://jngd0b8bsbpv"]
 
 [ext_resource type="Texture2D" uid="uid://cbsqsluyfsi0d" path="res://assets/environment/background_layer_1.png" id="1_6444e"]
+[ext_resource type="PackedScene" uid="uid://bmncrprtcr0i" path="res://Scenes/hud.tscn" id="1_af3po"]
 [ext_resource type="PackedScene" uid="uid://35o1a2eqqkao" path="res://Scenes/collectible.tscn" id="1_evi0p"]
 [ext_resource type="PackedScene" uid="uid://pbmoqjvodepq" path="res://Scenes/player.tscn" id="1_vk57k"]
 [ext_resource type="Texture2D" uid="uid://bkauvoulfpxqu" path="res://assets/environment/oak_woods_tileset.png" id="2_8ffim"]
@@ -323,6 +324,8 @@ sources/0 = SubResource("TileSetAtlasSource_8ffim")
 
 [node name="Level1" type="Node2D" unique_id=1260709686]
 
+[node name="HUD" parent="." unique_id=505549929 instance=ExtResource("1_af3po")]
+
 [node name="Killzone" type="Area2D" parent="." unique_id=546573623]
 position = Vector2(2, 113)
 
@@ -330,19 +333,19 @@ position = Vector2(2, 113)
 position = Vector2(3762.75, 740)
 shape = SubResource("RectangleShape2D_6444e")
 
-[node name="Collectible4" parent="." unique_id=247467186 instance=ExtResource("1_evi0p")]
+[node name="Extra Life" parent="." unique_id=247467186 instance=ExtResource("1_evi0p")]
 position = Vector2(479, 461)
 data = ExtResource("2_chwpn")
 
-[node name="Collectible3" parent="." unique_id=2005906627 instance=ExtResource("1_evi0p")]
+[node name="Coin Bag" parent="." unique_id=2005906627 instance=ExtResource("1_evi0p")]
 position = Vector2(625, 469)
 data = ExtResource("3_af3po")
 
-[node name="Collectible2" parent="." unique_id=2109589629 instance=ExtResource("1_evi0p")]
+[node name="Coin Purse" parent="." unique_id=2109589629 instance=ExtResource("1_evi0p")]
 position = Vector2(768, 472)
 data = ExtResource("4_uy8f0")
 
-[node name="Collectible" parent="." unique_id=213558694 instance=ExtResource("1_evi0p")]
+[node name="Coin" parent="." unique_id=213558694 instance=ExtResource("1_evi0p")]
 position = Vector2(360, 413)
 data = ExtResource("2_lsmp6")
 
