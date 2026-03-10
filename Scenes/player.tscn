@@ -214,7 +214,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h4iuc")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -336,4 +336,4 @@ shape = SubResource("CapsuleShape2D_f60y1")
 position = Vector2(99.99999, -87)
 scale = Vector2(2.8214288, 2.8214285)
 sprite_frames = SubResource("SpriteFrames_ax3m3")
-animation = &"jump"
+animation = &"death"
