@@ -98,3 +98,8 @@ func _blink(duration: float) -> void:
 
 	# Garante que fica visível no final
 	animated_sprite.visible = true
+
+
+func _on_killzone_body_entered(body: Node2D) -> void:
+	if body.has_method("die"):
+		body.die()

@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dlqog44f4sxft" path="res://assets/environment/background_layer_2.png" id="2_evi0p"]
 [ext_resource type="Texture2D" uid="uid://bl6agts1iu4br" path="res://assets/environment/background_layer_3.png" id="3_lsmp6"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6444e"]
+size = Vector2(9062.5, 37)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ffim"]
 texture = ExtResource("2_8ffim")
 texture_region_size = Vector2i(24, 24)
@@ -315,6 +318,13 @@ sources/0 = SubResource("TileSetAtlasSource_8ffim")
 
 [node name="Level1" type="Node2D" unique_id=1260709686]
 
+[node name="Killzone" type="Area2D" parent="." unique_id=546573623]
+position = Vector2(2, 113)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1325592519]
+position = Vector2(3762.75, 740)
+shape = SubResource("RectangleShape2D_6444e")
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1180566440]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=560063593]
@@ -381,3 +391,5 @@ tile_set = SubResource("TileSet_xfk5q")
 
 [node name="Player" parent="." unique_id=23372859 instance=ExtResource("1_vk57k")]
 position = Vector2(-85, 568)
+
+[connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
