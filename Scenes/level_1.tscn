@@ -4,9 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://35o1a2eqqkao" path="res://Scenes/collectible.tscn" id="1_evi0p"]
 [ext_resource type="PackedScene" uid="uid://pbmoqjvodepq" path="res://Scenes/player.tscn" id="1_vk57k"]
 [ext_resource type="Texture2D" uid="uid://bkauvoulfpxqu" path="res://assets/environment/oak_woods_tileset.png" id="2_8ffim"]
+[ext_resource type="Resource" uid="uid://byk0qtsr3tufh" path="res://assets/collectibles/extra_life.tres" id="2_chwpn"]
 [ext_resource type="Texture2D" uid="uid://dlqog44f4sxft" path="res://assets/environment/background_layer_2.png" id="2_evi0p"]
 [ext_resource type="Resource" uid="uid://c41fyd5fe6pby" path="res://assets/collectibles/coin.tres" id="2_lsmp6"]
+[ext_resource type="Resource" uid="uid://h4ucxiesvld6" path="res://assets/collectibles/coin_purse.tres" id="3_af3po"]
 [ext_resource type="Texture2D" uid="uid://bl6agts1iu4br" path="res://assets/environment/background_layer_3.png" id="3_lsmp6"]
+[ext_resource type="Resource" uid="uid://cb6a70cjicivt" path="res://assets/collectibles/coin_bag.tres" id="4_uy8f0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6444e"]
 size = Vector2(9062.5, 37)
@@ -327,7 +330,19 @@ position = Vector2(2, 113)
 position = Vector2(3762.75, 740)
 shape = SubResource("RectangleShape2D_6444e")
 
-[node name="Collectible" parent="." unique_id=247467186 instance=ExtResource("1_evi0p")]
+[node name="Collectible4" parent="." unique_id=247467186 instance=ExtResource("1_evi0p")]
+position = Vector2(479, 461)
+data = ExtResource("2_chwpn")
+
+[node name="Collectible3" parent="." unique_id=2005906627 instance=ExtResource("1_evi0p")]
+position = Vector2(625, 469)
+data = ExtResource("3_af3po")
+
+[node name="Collectible2" parent="." unique_id=2109589629 instance=ExtResource("1_evi0p")]
+position = Vector2(768, 472)
+data = ExtResource("4_uy8f0")
+
+[node name="Collectible" parent="." unique_id=213558694 instance=ExtResource("1_evi0p")]
 position = Vector2(360, 413)
 data = ExtResource("2_lsmp6")
 
@@ -399,4 +414,3 @@ tile_set = SubResource("TileSet_xfk5q")
 position = Vector2(-85, 568)
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
-[connection signal="body_entered" from="Collectible" to="Collectible" method="_on_body_entered"]

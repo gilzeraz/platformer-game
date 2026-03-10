@@ -109,3 +109,4 @@ func collect(data: CollectibleData) -> void:
 		extra_lives += 1
 	else:
 		coins += data.coin_value
+	print("Coins: ", coins, " Lives: ", extra_lives)

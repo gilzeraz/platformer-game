@@ -1,9 +1,47 @@
 [gd_resource type="Resource" script_class="CollectibleData" format=3 uid="uid://byk0qtsr3tufh"]
 
 [ext_resource type="Script" uid="uid://k64ft3wmcrkw" path="res://assets/collectibles/collectible_data.gd" id="1_rw5uy"]
-[ext_resource type="Texture2D" uid="uid://jq5nvivhrboe" path="res://assets/collectibles/Collectibles/heart/3.png" id="2_s3ebw"]
+[ext_resource type="Texture2D" uid="uid://cypgtc53i1x85" path="res://assets/collectibles/Collectibles/heart/heart_b.png" id="1_s3ebw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nse5"]
+atlas = ExtResource("1_s3ebw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vipui"]
+atlas = ExtResource("1_s3ebw")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lphf1"]
+atlas = ExtResource("1_s3ebw")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lp7n7"]
+atlas = ExtResource("1_s3ebw")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oo125"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nse5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vipui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lphf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lp7n7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [resource]
 script = ExtResource("1_rw5uy")
-texture = ExtResource("2_s3ebw")
+name = "Extra Life"
+is_extra_life = true
+frames = SubResource("SpriteFrames_oo125")
 metadata/_custom_type_script = "uid://b7v475osac8nn"

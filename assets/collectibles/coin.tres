@@ -48,5 +48,7 @@ animations = [{
 
 [resource]
 script = ExtResource("1_6s7id")
+name = "Coin"
+coin_value = 1
 frames = SubResource("SpriteFrames_rpkf6")
 metadata/_custom_type_script = "uid://b7v475osac8nn"
