@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # -- Constantes de movimento --
-const SPEED: float = 350.0
+const SPEED: float = 250.0
 const JUMP_FORCE: float = -350.0
 const GRAVITY: float = 900.0
 
