@@ -103,3 +103,9 @@ func _blink(duration: float) -> void:
 func _on_killzone_body_entered(body: Node2D) -> void:
 	if body.has_method("die"):
 		body.die()
+
+func collect(data: CollectibleData) -> void:
+	if data.is_extra_life:
+		extra_lives += 1
+	else:
+		coins += data.coin_value

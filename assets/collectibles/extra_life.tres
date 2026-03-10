@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CollectibleData" format=3 uid="uid://byk0qtsr3tufh"]
+
+[ext_resource type="Script" uid="uid://k64ft3wmcrkw" path="res://assets/collectibles/collectible_data.gd" id="1_rw5uy"]
+[ext_resource type="Texture2D" uid="uid://jq5nvivhrboe" path="res://assets/collectibles/Collectibles/heart/3.png" id="2_s3ebw"]
+
+[resource]
+script = ExtResource("1_rw5uy")
+texture = ExtResource("2_s3ebw")
+metadata/_custom_type_script = "uid://b7v475osac8nn"

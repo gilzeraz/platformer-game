@@ -1,9 +1,11 @@
 [gd_scene format=4 uid="uid://jngd0b8bsbpv"]
 
 [ext_resource type="Texture2D" uid="uid://cbsqsluyfsi0d" path="res://assets/environment/background_layer_1.png" id="1_6444e"]
+[ext_resource type="PackedScene" uid="uid://35o1a2eqqkao" path="res://Scenes/collectible.tscn" id="1_evi0p"]
 [ext_resource type="PackedScene" uid="uid://pbmoqjvodepq" path="res://Scenes/player.tscn" id="1_vk57k"]
 [ext_resource type="Texture2D" uid="uid://bkauvoulfpxqu" path="res://assets/environment/oak_woods_tileset.png" id="2_8ffim"]
 [ext_resource type="Texture2D" uid="uid://dlqog44f4sxft" path="res://assets/environment/background_layer_2.png" id="2_evi0p"]
+[ext_resource type="Resource" uid="uid://c41fyd5fe6pby" path="res://assets/collectibles/coin.tres" id="2_lsmp6"]
 [ext_resource type="Texture2D" uid="uid://bl6agts1iu4br" path="res://assets/environment/background_layer_3.png" id="3_lsmp6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6444e"]
@@ -325,6 +327,10 @@ position = Vector2(2, 113)
 position = Vector2(3762.75, 740)
 shape = SubResource("RectangleShape2D_6444e")
 
+[node name="Collectible" parent="." unique_id=247467186 instance=ExtResource("1_evi0p")]
+position = Vector2(360, 413)
+data = ExtResource("2_lsmp6")
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1180566440]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=560063593]
@@ -393,3 +399,4 @@ tile_set = SubResource("TileSet_xfk5q")
 position = Vector2(-85, 568)
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
+[connection signal="body_entered" from="Collectible" to="Collectible" method="_on_body_entered"]
