@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://de3giwxim2pwo"]
+
+[ext_resource type="PackedScene" uid="uid://bugkabrfo4bak" path="res://Scenes/enemies/base_enemy.tscn" id="1_52hnt"]
+[ext_resource type="SpriteFrames" uid="uid://sjlhof3jfu1x" path="res://Scenes/enemies/lizard/lizard_sprite_frames.tres" id="2_wtfhd"]
+
+[node name="Lizard" unique_id=932756905 instance=ExtResource("1_52hnt")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=273930806]
+position = Vector2(-33, -31.000004)
+scale = Vector2(1.078125, 1.03125)
+sprite_frames = ExtResource("2_wtfhd")
+animation = &"walk"

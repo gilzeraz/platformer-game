@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://bugkabrfo4bak"]
+
+[ext_resource type="Texture2D" uid="uid://dicwquqsdiig1" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Death1.png" id="1_8e1sn"]
+[ext_resource type="Script" uid="uid://i7suci4uirxv" path="res://Scenes/enemies/base_enemy.gd" id="1_clats"]
+[ext_resource type="Texture2D" uid="uid://co4wrle6ju787" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Death2.png" id="2_clats"]
+[ext_resource type="Texture2D" uid="uid://84q1aof04pln" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Death3.png" id="3_6ywbj"]
+[ext_resource type="Texture2D" uid="uid://cirvr3750ibk0" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Death4.png" id="4_0chss"]
+[ext_resource type="Texture2D" uid="uid://cgrlak6dnb27d" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Death5.png" id="5_bhsmu"]
+[ext_resource type="Texture2D" uid="uid://df07tfbw7t66r" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Death6.png" id="6_lk7a1"]
+[ext_resource type="Texture2D" uid="uid://caqu30wwcltf1" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Hurt1.png" id="7_opg0m"]
+[ext_resource type="Texture2D" uid="uid://bumpyln261gnh" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Hurt2.png" id="8_1lq0i"]
+[ext_resource type="Texture2D" uid="uid://dsgpj8pekmj2i" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Idle1.png" id="9_32l6q"]
+[ext_resource type="Texture2D" uid="uid://n2fay61udrtg" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Idle2.png" id="10_kj7dl"]
+[ext_resource type="Texture2D" uid="uid://dmhc8bubssdnt" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Idle3.png" id="11_mxa8e"]
+[ext_resource type="Texture2D" uid="uid://t8uxtd4hsa0w" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Walk1.png" id="12_ucwbw"]
+[ext_resource type="Texture2D" uid="uid://xuixb3m275dn" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Walk2.png" id="13_mnp5a"]
+[ext_resource type="Texture2D" uid="uid://dim2noaa74er5" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Walk3.png" id="14_4bgo7"]
+[ext_resource type="Texture2D" uid="uid://bjyuqrgkbbrt5" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Walk4.png" id="15_us3so"]
+[ext_resource type="Texture2D" uid="uid://c637gxihc0vir" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Walk5.png" id="16_tvjfh"]
+[ext_resource type="Texture2D" uid="uid://o7matmqrogp" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Walk6.png" id="17_26mt2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iw0tk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8e1sn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_clats")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6ywbj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0chss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bhsmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lk7a1")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_opg0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1lq0i")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_32l6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kj7dl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mxa8e")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ucwbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mnp5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4bgo7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_us3so")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_tvjfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_26mt2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i238n"]
+size = Vector2(60.25, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ds5h"]
+size = Vector2(61, 61)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cyctr"]
+radius = 36.013885
+
+[node name="BaseEnemy" type="CharacterBody2D" unique_id=932756905]
+script = ExtResource("1_clats")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=273930806]
+position = Vector2(-31, -39.999996)
+scale = Vector2(0.7578125, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iw0tk")
+animation = &"death"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1135832944]
+position = Vector2(-50, -30)
+shape = SubResource("RectangleShape2D_i238n")
+debug_color = Color(0, 0.5764706, 0.67058825, 0)
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=979954135]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1031747207]
+position = Vector2(-50.5, -31.5)
+shape = SubResource("RectangleShape2D_5ds5h")
+debug_color = Color(0, 0.6, 0.69803923, 0)
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=711726259]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1999921654]
+position = Vector2(-52, -29)
+shape = SubResource("CircleShape2D_cyctr")
+debug_color = Color(0, 0.6, 0.69803923, 0)

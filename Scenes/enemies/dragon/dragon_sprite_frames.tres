@@ -1,0 +1,85 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://pmoiyfk6a281"]
+
+[ext_resource type="Texture2D" uid="uid://dntypdql0rl82" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Death1.png" id="1_1flkd"]
+[ext_resource type="Texture2D" uid="uid://dqfyy3327awc5" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Death2.png" id="2_5e8ym"]
+[ext_resource type="Texture2D" uid="uid://dcy0ca2ew4ady" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Death3.png" id="3_8uxqq"]
+[ext_resource type="Texture2D" uid="uid://ce8xnvopsxroa" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Death4.png" id="4_gwsxt"]
+[ext_resource type="Texture2D" uid="uid://drt05snyf51to" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Death5.png" id="5_wmatq"]
+[ext_resource type="Texture2D" uid="uid://cvt5xusg6dc3w" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Hurt1.png" id="6_gefir"]
+[ext_resource type="Texture2D" uid="uid://brw6yfr7hh6o6" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Hurt2.png" id="7_sup2w"]
+[ext_resource type="Texture2D" uid="uid://d3mvxlpc3plqc" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Idle1.png" id="8_n3ery"]
+[ext_resource type="Texture2D" uid="uid://hi3tti37q1pe" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Idle2.png" id="9_7102r"]
+[ext_resource type="Texture2D" uid="uid://c7jtpg2mlob5" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Idle3.png" id="10_mx4fw"]
+[ext_resource type="Texture2D" uid="uid://4q5e5ytv8dna" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Walk1.png" id="11_bk7yf"]
+[ext_resource type="Texture2D" uid="uid://6qmwm7maniip" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Walk2.png" id="12_ys325"]
+[ext_resource type="Texture2D" uid="uid://f1li4dman180" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Walk3.png" id="13_jn3i2"]
+[ext_resource type="Texture2D" uid="uid://cjmpsfuvya005" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Walk4.png" id="14_v51vn"]
+[ext_resource type="Texture2D" uid="uid://nctivaxr27e6" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Walk5.png" id="15_3xtty"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1flkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5e8ym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8uxqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gwsxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wmatq")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_gefir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sup2w")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_n3ery")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7102r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mx4fw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_bk7yf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ys325")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jn3i2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_v51vn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_3xtty")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
