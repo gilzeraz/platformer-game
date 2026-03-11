@@ -321,22 +321,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
-size = Vector2(31, 38)
+size = Vector2(22, 38)
 
-[node name="Player" type="CharacterBody2D" unique_id=23372859]
-position = Vector2(-85, 16)
+[node name="Player" type="CharacterBody2D" unique_id=23372859 groups=["player"]]
 scale = Vector2(2, 2)
 script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1952801635]
-texture_filter = 1
+texture_filter = 2
 position = Vector2(58.499992, -40.999996)
 scale = Vector2(1.339286, 1.1785713)
 sprite_frames = SubResource("SpriteFrames_ax3m3")
 animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=259427341]
-position = Vector2(58, -27)
+position = Vector2(55, -27)
 shape = SubResource("RectangleShape2D_cvnsp")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1246853036]
+zoom = Vector2(1.2, 1.2)

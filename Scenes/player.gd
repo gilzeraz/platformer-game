@@ -88,3 +88,7 @@ func collect(data: CollectibleData) -> void:
 		coins += data.coin_value
 	hud.update_coins(coins)
 	hud.update_lives(extra_lives)
+
+func add_score(amount: int) -> void:
+	coins += amount
+	hud.update_coins(coins)

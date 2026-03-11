@@ -50,6 +50,8 @@ animations = [{
 radius = 18.0
 
 [node name="Collectible" type="Area2D" unique_id=247467186]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_athsx")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=133747001]

@@ -94,13 +94,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i238n"]
-size = Vector2(60.25, 57)
+size = Vector2(40, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ds5h"]
-size = Vector2(61, 61)
+size = Vector2(264, 184)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cyctr"]
-radius = 36.013885
+radius = 24.0
 
 [node name="BaseEnemy" type="CharacterBody2D" unique_id=932756905]
 script = ExtResource("1_clats")

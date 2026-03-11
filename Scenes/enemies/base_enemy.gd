@@ -2,7 +2,7 @@ class_name BaseEnemy
 extends CharacterBody2D
 
 
-@export var speed = 300.0
+@export var speed = 150.0
 @export var jump_velocity = -400.0
 @export var health: float = 100.0
 
@@ -54,12 +54,12 @@ func _physics_process(delta: float) -> void:
 
 # Detecta o player
 func _on_detection_area_body_entered(body: Node2D) -> void:
+	print("detected: ", body.name)
 	if body.is_in_group("player"):
 		is_chasing = true
-
+		print("chasing!")
 func _on_detection_area_body_exited(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		is_chasing = false
+	pass
 
 func die() -> void:
 	if is_dead:
@@ -71,6 +71,7 @@ func die() -> void:
 	queue_free()
 
 
-func _on_hit_box_body_entered(body: Node2D) -> void:
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		body.die()
