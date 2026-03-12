@@ -47,7 +47,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mfbqs"]
-radius = 18.0
+radius = 11.0
 
 [node name="Collectible" type="Area2D" unique_id=247467186]
 collision_layer = 0
@@ -55,13 +55,13 @@ collision_mask = 2
 script = ExtResource("1_athsx")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=133747001]
-position = Vector2(25, 23)
-scale = Vector2(4.125, 3.875)
+position = Vector2(13.500001, 14.499999)
+scale = Vector2(2.6875002, 2.8124998)
 sprite_frames = SubResource("SpriteFrames_k4w2s")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=885137832]
-position = Vector2(24, 23)
+position = Vector2(14, 15)
 shape = SubResource("CircleShape2D_mfbqs")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
