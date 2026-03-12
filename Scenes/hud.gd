@@ -12,3 +12,7 @@ func update_coins(amount: int) -> void:
 
 func update_lives(amount: int) -> void:
 	lives_label.text = "Lives: " + str(amount)
+	
+func _on_reset_pressed() -> void:
+	SaveManager.delete_save()
+	get_tree().reload_current_scene()
