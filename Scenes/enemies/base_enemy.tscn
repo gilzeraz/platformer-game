@@ -40,7 +40,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_lk7a1")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -51,7 +51,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("8_1lq0i")
 }],
-"loop": true,
+"loop": false,
 "name": &"hurt",
 "speed": 5.0
 }, {
@@ -94,7 +94,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i238n"]
-size = Vector2(40, 48)
+size = Vector2(20, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ds5h"]
 size = Vector2(264, 184)
@@ -102,30 +102,45 @@ size = Vector2(264, 184)
 [sub_resource type="CircleShape2D" id="CircleShape2D_cyctr"]
 radius = 24.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clats"]
+size = Vector2(27, 2)
+
 [node name="BaseEnemy" type="CharacterBody2D" unique_id=932756905]
 script = ExtResource("1_clats")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=273930806]
-position = Vector2(-31, -39.999996)
+position = Vector2(21.000002, -39.999992)
 scale = Vector2(0.7578125, 0.6875)
 sprite_frames = SubResource("SpriteFrames_iw0tk")
-animation = &"death"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1135832944]
-position = Vector2(-50, -30)
+position = Vector2(0, -24)
 shape = SubResource("RectangleShape2D_i238n")
 debug_color = Color(0, 0.5764706, 0.67058825, 0)
 
 [node name="DetectionArea" type="Area2D" parent="." unique_id=979954135]
+position = Vector2(0, 5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1031747207]
-position = Vector2(-50.5, -31.5)
+position = Vector2(0, -31.5)
 shape = SubResource("RectangleShape2D_5ds5h")
 debug_color = Color(0, 0.6, 0.69803923, 0)
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=711726259]
+position = Vector2(0, 5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1999921654]
-position = Vector2(-52, -29)
+position = Vector2(0, -29)
 shape = SubResource("CircleShape2D_cyctr")
 debug_color = Color(0, 0.6, 0.69803923, 0)
+
+[node name="Jumpbox" type="Area2D" parent="." unique_id=1571528163]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jumpbox" unique_id=2142463210]
+position = Vector2(-2.5, -49)
+shape = SubResource("RectangleShape2D_clats")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

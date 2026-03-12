@@ -7,11 +7,9 @@
 script = ExtResource("2_nxnxh")
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=273930806]
-position = Vector2(-40, -32)
+position = Vector2(18, -31)
 scale = Vector2(0.6, 0.545)
-
-[node name="CollisionShape2D" parent="." index="1" unique_id=1135832944]
-position = Vector2(-52, -24)
+animation = &"hurt"
 
 [node name="DetectionArea" parent="." index="2" unique_id=979954135]
 position = Vector2(-0.5000305, 0)
@@ -19,7 +17,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" parent="DetectionArea" index="0" unique_id=1031747207]
-position = Vector2(-51.49997, -92)
+position = Vector2(0, 0)
 
 [node name="Hitbox" parent="." index="3" unique_id=711726259]
 position = Vector2(-0.5000305, 0)
@@ -27,8 +25,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" parent="Hitbox" index="0" unique_id=1999921654]
-position = Vector2(-51.49997, -16)
+position = Vector2(0, -24)
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
-[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

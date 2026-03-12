@@ -16,27 +16,45 @@ var spawn_position: Vector2 = Vector2.ZERO
 # -- Referências aos nós --
 @onready var animated_sprite: AnimatedSprite2D = $Sprite2D
 @onready var hud = $"../HUD"
+@onready var death_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var walking_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D2
+@onready var jump_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D3
+@onready var respawn_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D4
 
 func _ready() -> void:
 	spawn_position = position
 	hud.update_coins(coins)
 	hud.update_lives(extra_lives)
+	animated_sprite.frame_changed.connect(_on_frame_changed)
+
+func _on_frame_changed() -> void:
+	if animated_sprite.animation == "walk" and is_on_floor():
+		# Ajuste os frames conforme sua animação (frame do pé no chão)
+		if animated_sprite.frame == 0 or animated_sprite.frame == 3:
+			walking_sound.play()
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
+
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
+
 	var direction: float = Input.get_axis("move_left", "move_right")
 	velocity.x = direction * SPEED
+
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_FORCE
+		jump_sound.play()
+
 	if direction > 0:
 		animated_sprite.flip_h = false
 	elif direction < 0:
 		animated_sprite.flip_h = true
+
 	_update_animation(direction)
 	move_and_slide()
+
 	# Teste de morte — remover depois
 	if Input.is_action_just_pressed("ui_cancel"):
 		die()
@@ -44,10 +62,12 @@ func _physics_process(delta: float) -> void:
 func _update_animation(direction: float) -> void:
 	if not is_on_floor():
 		animated_sprite.play("jump")
+		walking_sound.stop()
 	elif direction != 0:
 		animated_sprite.play("walk")
 	else:
 		animated_sprite.play("idle")
+		walking_sound.stop()
 
 func die() -> void:
 	if is_dead:
@@ -55,17 +75,22 @@ func die() -> void:
 	is_dead = true
 	velocity = Vector2.ZERO
 	animated_sprite.play("death")
+	death_sound.play()
 	await animated_sprite.animation_finished
+	await death_sound.finished
+
 	if extra_lives > 0:
 		extra_lives -= 1
 		_respawn()
 	else:
 		print("Game Over")
+		queue_free()
 
 func _respawn() -> void:
 	position = spawn_position
 	velocity = Vector2.ZERO
 	is_dead = false
+	respawn_sound.play()
 	await _blink(1.0)
 
 func _blink(duration: float) -> void:
@@ -92,3 +117,8 @@ func collect(data: CollectibleData) -> void:
 func add_score(amount: int) -> void:
 	coins += amount
 	hud.update_coins(coins)
+
+func _on_feet_area_entered(area: Area2D) -> void:
+	velocity.y = JUMP_FORCE
+	var pai: BaseEnemy = area.get_parent()
+	pai.die()
