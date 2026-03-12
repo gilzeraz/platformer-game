@@ -8,6 +8,8 @@
 [ext_resource type="Resource" uid="uid://byk0qtsr3tufh" path="res://assets/collectibles/extra_life.tres" id="2_chwpn"]
 [ext_resource type="Texture2D" uid="uid://dlqog44f4sxft" path="res://assets/environment/background_layer_2.png" id="2_evi0p"]
 [ext_resource type="Texture2D" uid="uid://bl6agts1iu4br" path="res://assets/environment/background_layer_3.png" id="3_lsmp6"]
+[ext_resource type="PackedScene" uid="uid://bijbx010uj4d2" path="res://Scenes/enemies/dragon/dragon.tscn" id="9_uy8f0"]
+[ext_resource type="PackedScene" uid="uid://de3giwxim2pwo" path="res://Scenes/enemies/lizard/lizard.tscn" id="10_6r07y"]
 [ext_resource type="AudioStream" uid="uid://cslj7gr0yhbhh" path="res://assets/sounds/Woodland Fantasy.mp3" id="10_chwpn"]
 [ext_resource type="PackedScene" uid="uid://38o82tswcb2s" path="res://Scenes/enemies/demon/demon.tscn" id="13_8i23i"]
 
@@ -368,8 +370,14 @@ tile_set = SubResource("TileSet_xfk5q")
 [node name="Demon" parent="." unique_id=1640871885 instance=ExtResource("13_8i23i")]
 position = Vector2(1066, 551)
 
+[node name="Dragon" parent="." unique_id=932756905 instance=ExtResource("9_uy8f0")]
+position = Vector2(2004, 551)
+
+[node name="Lizard" parent="." unique_id=958500932 instance=ExtResource("10_6r07y")]
+position = Vector2(1530, 547)
+
 [node name="Player" parent="." unique_id=23372859 instance=ExtResource("1_vk57k")]
-position = Vector2(47, 553)
+position = Vector2(1760, 548)
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=844478162]
 stream = ExtResource("10_chwpn")

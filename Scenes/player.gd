@@ -26,6 +26,7 @@ var spawn_position: Vector2 = Vector2.ZERO
 @onready var respawn_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D4
 
 func _ready() -> void:
+	add_to_group("player")
 	spawn_position = position
 	var data = SaveManager.load_data()
 	if not data.is_empty():
@@ -95,6 +96,7 @@ func die() -> void:
 	await death_sound.finished
 	if extra_lives > 0:
 		extra_lives -= 1
+		hud.update_lives(extra_lives)  # ← adicione essa linha
 		SaveManager.save(self)
 		_respawn()
 	else:
@@ -137,6 +139,7 @@ func add_score(amount: int) -> void:
 	SaveManager.save(self)
 
 func _on_feet_area_entered(area: Area2D) -> void:
-	velocity.y = JUMP_FORCE
-	var pai: BaseEnemy = area.get_parent()
-	pai.die()
+	if area.name == "Jumpbox":
+		velocity.y = JUMP_FORCE
+		var enemy: BaseEnemy = area.get_parent()
+		enemy.die()

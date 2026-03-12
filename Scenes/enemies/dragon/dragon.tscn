@@ -8,7 +8,21 @@
 script = ExtResource("2_ixld7")
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=273930806]
-position = Vector2(-59, -40)
+position = Vector2(-6, -40)
 scale = Vector2(0.53515625, 0.62890625)
 sprite_frames = ExtResource("3_ffg8e")
-animation = &"idle"
+animation = &"death"
+
+[node name="DetectionArea" parent="." index="2" unique_id=979954135]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Hitbox" parent="." index="3" unique_id=711726259]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Jumpbox" parent_id_path=PackedInt32Array(1571528163) index="0" unique_id=2142463210]
+position = Vector2(-0.5, -49)
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

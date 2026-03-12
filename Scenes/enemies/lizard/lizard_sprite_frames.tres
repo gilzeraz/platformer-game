@@ -39,7 +39,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_43fuo")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -50,7 +50,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("8_07cwl")
 }],
-"loop": true,
+"loop": false,
 "name": &"hurt",
 "speed": 5.0
 }, {

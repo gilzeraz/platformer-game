@@ -18,42 +18,28 @@ func _ready() -> void:
 	start_position = global_position
 
 func _physics_process(delta: float) -> void:
-
 	if is_dead:
 		return
-
-	# Gravidade
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
-
 	if is_chasing and target and is_instance_valid(target):
-
-		# direção baseada na posição do player
-		var dir: float =  target.global_position.x - global_position.x
+		var dir: float = target.global_position.x - global_position.x
 		dir = sign(dir)
 		velocity.x = dir * CHASE_SPEED
-
 		animated_sprite.flip_h = dir < 0
-
 	else:
-		# patrulha
 		velocity.x = direction * SPEED
-
 		if global_position.x > start_position.x + PATROL_DISTANCE:
 			direction = -1
 		elif global_position.x < start_position.x - PATROL_DISTANCE:
 			direction = 1
-
 		animated_sprite.flip_h = direction < 0
-
 	animated_sprite.play("walk")
-
 	move_and_slide()
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	is_chasing = true
 	target = body
-	
 
 func _on_detection_area_body_exited(body: Node2D) -> void:
 	await get_tree().create_timer(3.0).timeout
@@ -64,18 +50,17 @@ func _on_detection_area_body_exited(body: Node2D) -> void:
 func die() -> void:
 	if is_dead:
 		return
-		
 	is_dead = true
 	velocity = Vector2.ZERO
 	animated_sprite.play("death")
-
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
 		player.add_score(5)
-
 	await animated_sprite.animation_finished
 	queue_free()
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	body.die()
-	is_chasing = false
+	print("hitbox: ", name, " tocou em: ", body.name, " grupos: ", body.get_groups())
+	if body.is_in_group("player"):
+		body.die()
+		is_chasing = false

@@ -103,7 +103,7 @@ size = Vector2(264, 184)
 radius = 24.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clats"]
-size = Vector2(27, 2)
+size = Vector2(7, 2)
 
 [node name="BaseEnemy" type="CharacterBody2D" unique_id=932756905]
 script = ExtResource("1_clats")
