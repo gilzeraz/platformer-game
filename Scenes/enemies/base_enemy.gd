@@ -13,6 +13,7 @@ var start_position: Vector2
 var target: Node2D = null
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var death_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
 	start_position = global_position
@@ -38,8 +39,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
-	is_chasing = true
-	target = body
+	if body.is_in_group("player"):
+		is_chasing = true
+		target = body
 
 func _on_detection_area_body_exited(body: Node2D) -> void:
 	await get_tree().create_timer(5.0).timeout
@@ -53,10 +55,12 @@ func die() -> void:
 	is_dead = true
 	velocity = Vector2.ZERO
 	animated_sprite.play("death")
+	death_sound.play()
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
 		player.add_score(5)
 	await animated_sprite.animation_finished
+	await death_sound.finished
 	queue_free()
 
 func _on_hitbox_body_entered(body: Node2D) -> void:

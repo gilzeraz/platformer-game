@@ -1,8 +1,59 @@
 [gd_scene format=3 uid="uid://bqiiilmbyg6af"]
 
 [ext_resource type="Script" uid="uid://chh0bqosc0v5r" path="res://Scenes/main_menu.gd" id="1_28flt"]
-[ext_resource type="AudioStream" uid="uid://b28novpc8p41r" path="res://assets/sounds/The_Old_Tower_Inn.mp3" id="2_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://t81xxscgytq7" path="res://assets/environment/bg (1).png" id="2_48xlc"]
+[ext_resource type="AudioStream" uid="uid://brdfwtjo2cw7f" path="res://assets/sounds/xDeviruchi - Title Theme .wav" id="2_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://1dd6fqfgt7cq" path="res://assets/player/char_blue.png" id="4_ce3w2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n45e2"]
+atlas = ExtResource("4_ce3w2")
+region = Rect2(0, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opfnp"]
+atlas = ExtResource("4_ce3w2")
+region = Rect2(56, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cp0ys"]
+atlas = ExtResource("4_ce3w2")
+region = Rect2(112, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhxw7"]
+atlas = ExtResource("4_ce3w2")
+region = Rect2(168, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trj04"]
+atlas = ExtResource("4_ce3w2")
+region = Rect2(224, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16hvj"]
+atlas = ExtResource("4_ce3w2")
+region = Rect2(280, 0, 56, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vr1f0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n45e2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opfnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cp0ys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhxw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trj04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16hvj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
 
 [node name="MainMenu" type="Control" unique_id=933307532]
 layout_mode = 3
@@ -14,23 +65,21 @@ grow_vertical = 2
 script = ExtResource("1_28flt")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1222253048]
-stream = ExtResource("2_1ehe0")
+stream = ExtResource("2_ce3w2")
 autoplay = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1560113082]
+texture_filter = 3
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -357.0
-offset_top = -167.0
-offset_right = 426.0
-offset_bottom = -3.0
+offset_left = -2.0
+offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_48xlc")
 expand_mode = 1
-stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1356260273]
 layout_mode = 1
@@ -39,10 +88,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -107.0
-offset_top = 16.0
-offset_right = 174.0
-offset_bottom = 195.0
+offset_left = -176.0
+offset_top = -82.0
+offset_right = 105.0
+offset_bottom = 97.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
@@ -61,6 +110,13 @@ text = "CONTINUE"
 [node name="exit" type="Button" parent="VBoxContainer" unique_id=1352261409]
 layout_mode = 2
 text = "EXIT"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1240141726]
+texture_filter = 1
+position = Vector2(959.00006, 428)
+scale = Vector2(5.2232127, 5.2232127)
+sprite_frames = SubResource("SpriteFrames_vr1f0")
+animation = &"idle"
 
 [connection signal="pressed" from="VBoxContainer/newgame" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/newgame" to="." method="_on_newgame_pressed"]
