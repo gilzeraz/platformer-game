@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bqiiilmbyg6af"]
+
+[ext_resource type="Script" uid="uid://chh0bqosc0v5r" path="res://Scenes/main_menu.gd" id="1_28flt"]
+[ext_resource type="AudioStream" uid="uid://b28novpc8p41r" path="res://assets/sounds/The_Old_Tower_Inn.mp3" id="2_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://t81xxscgytq7" path="res://assets/environment/bg (1).png" id="2_48xlc"]
+
+[node name="MainMenu" type="Control" unique_id=933307532]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1222253048]
+stream = ExtResource("2_1ehe0")
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1560113082]
+layout_mode = 0
+offset_right = 1159.0
+offset_bottom = 652.0
+texture = ExtResource("2_48xlc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1356260273]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -29.5
+offset_right = 20.0
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=2100834137]
+layout_mode = 2
+
+[node name="newgame" type="Button" parent="VBoxContainer" unique_id=722041012]
+layout_mode = 2
+text = "NEW GAME"
+
+[node name="continue" type="Button" parent="VBoxContainer" unique_id=1264657649]
+layout_mode = 2
+text = "CONTINUE"
+
+[node name="exit" type="Button" parent="VBoxContainer" unique_id=1352261409]
+layout_mode = 2
+text = "EXIT"
+
+[connection signal="pressed" from="VBoxContainer/newgame" to="." method="_on_newgame_pressed"]
+[connection signal="pressed" from="VBoxContainer/newgame" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/continue" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]

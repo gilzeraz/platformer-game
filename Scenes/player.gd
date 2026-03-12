@@ -10,6 +10,10 @@ var extra_lives: int = 3
 var coins: int = 0
 var is_dead: bool = false
 
+# -- Autosave --
+var save_timer: float = 0.0
+const SAVE_INTERVAL: float = 10.0
+
 # -- Posição inicial de spawn --
 var spawn_position: Vector2 = Vector2.ZERO
 
@@ -23,19 +27,30 @@ var spawn_position: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	spawn_position = position
+	var data = SaveManager.load_data()
+	if not data.is_empty():
+		extra_lives = data["lives"]
+		coins = data["coins"]
+		position = Vector2(data["pos_x"], data["pos_y"])
+		spawn_position = position
 	hud.update_coins(coins)
 	hud.update_lives(extra_lives)
 	animated_sprite.frame_changed.connect(_on_frame_changed)
 
 func _on_frame_changed() -> void:
 	if animated_sprite.animation == "walk" and is_on_floor():
-		# Ajuste os frames conforme sua animação (frame do pé no chão)
 		if animated_sprite.frame == 0 or animated_sprite.frame == 3:
 			walking_sound.play()
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
+
+	# Autosave
+	save_timer += delta
+	if save_timer >= SAVE_INTERVAL:
+		save_timer = 0.0
+		SaveManager.save(self)
 
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
@@ -78,11 +93,12 @@ func die() -> void:
 	death_sound.play()
 	await animated_sprite.animation_finished
 	await death_sound.finished
-
 	if extra_lives > 0:
 		extra_lives -= 1
+		SaveManager.save(self)
 		_respawn()
 	else:
+		SaveManager.delete_save()
 		print("Game Over")
 		queue_free()
 
@@ -113,10 +129,12 @@ func collect(data: CollectibleData) -> void:
 		coins += data.coin_value
 	hud.update_coins(coins)
 	hud.update_lives(extra_lives)
+	SaveManager.save(self)
 
 func add_score(amount: int) -> void:
 	coins += amount
 	hud.update_coins(coins)
+	SaveManager.save(self)
 
 func _on_feet_area_entered(area: Area2D) -> void:
 	velocity.y = JUMP_FORCE
