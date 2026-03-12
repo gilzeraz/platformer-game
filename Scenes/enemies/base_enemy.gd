@@ -42,7 +42,7 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 	target = body
 
 func _on_detection_area_body_exited(body: Node2D) -> void:
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(5.0).timeout
 	if body == target:
 		is_chasing = false
 		target = null

@@ -325,10 +325,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
-size = Vector2(18.5, 38)
+size = Vector2(16.5, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6t5aa"]
-size = Vector2(18.75, 2.5)
+size = Vector2(9, 1.25)
 
 [node name="Player" type="CharacterBody2D" unique_id=23372859 groups=["player"]]
 texture_filter = 1
@@ -339,18 +339,18 @@ script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1952801635]
 texture_filter = 6
-position = Vector2(0, -31.999998)
-scale = Vector2(1.339286, 1.1428571)
+position = Vector2(9.536743e-07, -18.5)
+scale = Vector2(0.65178573, 0.65178573)
 sprite_frames = SubResource("SpriteFrames_ax3m3")
 animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=259427341]
 texture_filter = 1
-position = Vector2(0, -19)
+position = Vector2(0.25, -11)
 shape = SubResource("RectangleShape2D_cvnsp")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1246853036]
-position = Vector2(0, -93.499985)
+position = Vector2(0, -146.49994)
 scale = Vector2(0.18, 0.18)
 
 [node name="Feet" type="Area2D" parent="." unique_id=998984760]
@@ -358,7 +358,7 @@ collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Feet" unique_id=1704765114]
-position = Vector2(0.125, 1.5)
+position = Vector2(0, 0.375)
 shape = SubResource("RectangleShape2D_6t5aa")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2013414684]

@@ -1,27 +1,164 @@
 [gd_scene format=3 uid="uid://bmncrprtcr0i"]
 
 [ext_resource type="Script" uid="uid://upfy4861neh8" path="res://Scenes/hud.gd" id="1_e0onf"]
+[ext_resource type="Texture2D" uid="uid://bdmnblolqr324" path="res://assets/collectibles/Collectibles/coin/coin_w.png" id="2_fccik"]
+[ext_resource type="Texture2D" uid="uid://3k7fdapvii4e" path="res://assets/collectibles/Collectibles/heart/heart_w.png" id="3_bjfho"]
+[ext_resource type="Texture2D" uid="uid://vm6300kl2lbp" path="res://assets/environment/pause.png" id="4_6fbih"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjfho"]
+atlas = ExtResource("2_fccik")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fbih"]
+atlas = ExtResource("2_fccik")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1xeu"]
+atlas = ExtResource("2_fccik")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36asn"]
+atlas = ExtResource("2_fccik")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jye8"]
+atlas = ExtResource("2_fccik")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_43w4t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjfho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fbih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1xeu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36asn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jye8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43w4t"]
+atlas = ExtResource("3_bjfho")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gr8i"]
+atlas = ExtResource("3_bjfho")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ep0j"]
+atlas = ExtResource("3_bjfho")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4f5kr"]
+atlas = ExtResource("3_bjfho")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_piegi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43w4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gr8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ep0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4f5kr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="HUD" type="CanvasLayer" unique_id=505549929]
+process_mode = 3
 script = ExtResource("1_e0onf")
 
-[node name="CoinsLabel" type="Label" parent="." unique_id=1112704304]
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 60.0
-offset_bottom = 43.0
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1214173346]
+offset_left = 76.0
+offset_top = 25.0
+offset_right = 125.0
+offset_bottom = 65.0
 
-[node name="LivesLabel" type="Label" parent="." unique_id=1497921505]
-offset_left = 20.0
-offset_top = 50.0
-offset_right = 60.0
-offset_bottom = 73.0
+[node name="CoinIcon" type="AnimatedSprite2D" parent="HBoxContainer" unique_id=1473501864]
+position = Vector2(-21.000002, 19.999996)
+scale = Vector2(3.8750002, 3.4999998)
+sprite_frames = SubResource("SpriteFrames_43w4t")
+animation = &"idle"
 
-[node name="reset" type="Button" parent="." unique_id=662086034]
-offset_left = 1090.0
-offset_top = 4.0
-offset_right = 1144.0
-offset_bottom = 35.0
-text = "RESET"
+[node name="CoinsLabel" type="Label" parent="HBoxContainer" unique_id=1112704304]
+layout_mode = 2
+text = "COINS"
+vertical_alignment = 1
 
-[connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1359907206]
+offset_left = 247.0
+offset_top = 25.0
+offset_right = 296.0
+offset_bottom = 65.0
+
+[node name="HeartIcon" type="AnimatedSprite2D" parent="HBoxContainer2" unique_id=763464123]
+position = Vector2(-25.999992, 18)
+scale = Vector2(2.9375012, 2.6532264)
+sprite_frames = SubResource("SpriteFrames_piegi")
+animation = &"idle"
+
+[node name="CoinsLabel" type="Label" parent="HBoxContainer2" unique_id=1775542030]
+layout_mode = 2
+text = "LIVES"
+vertical_alignment = 1
+
+[node name="PauseButton" type="TextureButton" parent="." unique_id=1281352042]
+offset_left = 1078.0
+offset_top = 21.0
+offset_right = 1128.0
+offset_bottom = 71.0
+texture_normal = ExtResource("4_6fbih")
+
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=946122261]
+process_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu" unique_id=332814163]
+offset_left = 586.0
+offset_top = 252.0
+offset_right = 626.0
+offset_bottom = 323.0
+
+[node name="LabelPause" type="Label" parent="PauseMenu/VBoxContainer" unique_id=1030955633]
+layout_mode = 2
+
+[node name="BtnRetomar" type="Button" parent="PauseMenu/VBoxContainer" unique_id=269249522]
+layout_mode = 2
+text = "RESUME"
+
+[node name="BtnReiniciar" type="Button" parent="PauseMenu/VBoxContainer" unique_id=176940822]
+layout_mode = 2
+text = "RESTART"
+
+[node name="BtnMenu" type="Button" parent="PauseMenu/VBoxContainer" unique_id=1673218143]
+layout_mode = 2
+text = "MENU"
+
+[node name="BtnDeletar" type="Button" parent="PauseMenu/VBoxContainer" unique_id=522478324]
+layout_mode = 2
+text = "DELETE"
+
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="PauseMenu/VBoxContainer/BtnRetomar" to="." method="_on_btn_retomar_pressed"]
+[connection signal="pressed" from="PauseMenu/VBoxContainer/BtnReiniciar" to="." method="_on_btn_reiniciar_pressed"]
+[connection signal="pressed" from="PauseMenu/VBoxContainer/BtnMenu" to="." method="_on_btn_menu_pressed"]
+[connection signal="pressed" from="PauseMenu/VBoxContainer/BtnDeletar" to="." method="_on_btn_deletar_pressed"]

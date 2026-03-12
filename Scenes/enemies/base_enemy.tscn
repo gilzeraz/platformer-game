@@ -42,7 +42,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"death",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -53,7 +53,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hurt",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -67,7 +67,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -90,14 +90,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i238n"]
 size = Vector2(20, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ds5h"]
-size = Vector2(600, 184)
+size = Vector2(372, 118.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cyctr"]
 radius = 24.0
@@ -112,7 +112,7 @@ script = ExtResource("1_clats")
 position = Vector2(21.000002, -39.999992)
 scale = Vector2(0.7578125, 0.6875)
 sprite_frames = SubResource("SpriteFrames_iw0tk")
-animation = &"idle"
+animation = &"hurt"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1135832944]
 position = Vector2(0, -24)
@@ -123,7 +123,7 @@ debug_color = Color(0, 0.5764706, 0.67058825, 0)
 position = Vector2(0, 5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1031747207]
-position = Vector2(-4, -31.5)
+position = Vector2(1, -64.25)
 shape = SubResource("RectangleShape2D_5ds5h")
 debug_color = Color(0, 0.6, 0.69803923, 0)
 
