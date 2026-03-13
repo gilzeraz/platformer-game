@@ -1,80 +1,56 @@
 extends CharacterBody2D
 ## Main controller for the player character.
 ##
-## Responsibilities:
-## - Horizontal movement and double jump
-## - Life and damage system
-## - Autosave system
-## - Item collection
-## - Camera with horizontal limits
+## Handles horizontal movement, double jump, life and damage system,
+## automatic saving, item collection, and a camera with horizontal limits.
 
 
+
+#region Properties
+
+## Constants used for movement and timing.
+#region Constants
 ## Horizontal movement speed in pixels per second.
 const SPEED: float = 250.0
 
 ## Initial vertical velocity applied when jumping.
 const JUMP_FORCE: float = -350.0
 
-## Gravitational acceleration applied while airborne, in pixels/s².
+## Gravitational acceleration applied while airborne, in pixels per second squared.
 const GRAVITY: float = 900.0
 
 ## Maximum number of jumps allowed before landing.
 const MAX_JUMPS: int = 2
 
-
-## Number of extra lives available to the player.
-var extra_lives: int = 3
-
-## Total number of coins collected.
-var coins: int = 0
-
-## Indicates whether the player is currently dead.
-var is_dead: bool = false
-
-## Indicates whether the player is temporarily invincible.
-var is_invincible: bool = false
-
-## Current number of jumps performed since the last time the player touched the floor.
-var jump_count: int = 0
-
-
 ## Time interval between automatic saves, in seconds.
 const SAVE_INTERVAL: float = 10.0
+
+## Time interval between blink frames during invincibility or respawn, in seconds.
 const INTERVAL: float = 0.1
+#endregion
 
-## Timer used to track the autosave interval.
+## Runtime state variables.
+var extra_lives: int = 3
+var coins: int = 0
+var is_dead: bool = false
+var is_invincible: bool = false
+var jump_count: int = 0
 var save_timer: float = 0.0
+var spawn_position: Vector2 = Vector2.ZERO
+var camera_fixed_y: float = 0.0
 
-
-## Position where the player respawns after death.
-var spawn_position: Vector2
-
-## Fixed vertical camera position used to prevent vertical camera movement.
-var camera_fixed_y: float
-
-
-## Reference to the player's animated sprite.
 @onready var animated_sprite: AnimatedSprite2D = $Sprite2D
-
-## Reference to the HUD node responsible for displaying lives and coins.
-@onready var hud = $"../HUD"
-
-## Sound played when the player dies.
+@onready var hud: CanvasLayer = $"../HUD"
 @onready var death_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
-
-## Sound played when the player walks.
 @onready var walking_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D2
-
-## Sound played when the player jumps.
 @onready var jump_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D3
-
-## Sound played when the player respawns.
 @onready var respawn_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D4
-
-## Camera attached to the player.
 @onready var camera: Camera2D = $Camera2D
 
+#endregion
 
+
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_to_group("player")
 	spawn_position = position
@@ -92,6 +68,8 @@ func _ready() -> void:
 	camera.limit_bottom = 2000
 
 
+
+# Loads saved player data if present.
 func _load_save() -> void:
 	var data: Dictionary = SaveManager.load_data()
 
@@ -104,6 +82,8 @@ func _load_save() -> void:
 	spawn_position = position
 
 
+
+# Physics processing entry point. Handles movement and camera updates.
 func _physics_process(delta: float) -> void:
 	if is_dead: return
 
@@ -119,6 +99,8 @@ func _physics_process(delta: float) -> void:
 	_update_camera()
 
 
+
+# Updates the camera horizontal position while keeping a fixed vertical offset.
 func _update_camera() -> void:
 	var target_x: float = clamp(
 		global_position.x,
@@ -129,6 +111,8 @@ func _update_camera() -> void:
 	camera.global_position = Vector2(target_x, camera_fixed_y)
 
 
+
+# Reads input and moves the character horizontally.
 func _handle_movement() -> void:
 	var direction: float = Input.get_axis("move_left", "move_right")
 
@@ -140,6 +124,8 @@ func _handle_movement() -> void:
 		animated_sprite.flip_h = true
 
 
+
+# Handles jump requests, including multiple jumps.
 func _handle_jump() -> void:
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor() or jump_count < MAX_JUMPS:
@@ -151,6 +137,8 @@ func _handle_jump() -> void:
 		velocity.y *= 0.5
 
 
+
+# Applies gravity when airborne and resets jump count on floor contact.
 func _apply_gravity(delta: float) -> void:
 	if is_on_floor():
 		jump_count = 0
@@ -158,6 +146,8 @@ func _apply_gravity(delta: float) -> void:
 		velocity.y += GRAVITY * delta
 
 
+
+# Updates the animated sprite based on movement state.
 func _update_animation(direction: float) -> void:
 	if not is_on_floor():
 		animated_sprite.play("jump")
@@ -171,6 +161,8 @@ func _update_animation(direction: float) -> void:
 		walking_sound.stop()
 
 
+
+# Called when the sprite frame changes to trigger footstep sound.
 func _on_frame_changed() -> void:
 	if animated_sprite.animation != "walk": return
 
@@ -180,6 +172,8 @@ func _on_frame_changed() -> void:
 		walking_sound.play()
 
 
+
+# Manages periodic autosave timing and triggers saves.
 func _handle_autosave(delta: float) -> void:
 	save_timer += delta
 
@@ -188,6 +182,7 @@ func _handle_autosave(delta: float) -> void:
 	save_timer = 0.0
 
 	SaveManager.save(self)
+
 
 
 ## Applies damage to the player, reducing lives and granting temporary invincibility.
@@ -208,6 +203,7 @@ func take_damage() -> void:
 	await _blink(1.0)
 
 	is_invincible = false
+
 
 
 ## Starts the death sequence and handles respawn or game over.
@@ -235,6 +231,8 @@ func die() -> void:
 		_game_over()
 
 
+
+# Respawns the player at the saved spawn position.
 func _respawn() -> void:
 	position = spawn_position
 	velocity = Vector2.ZERO
@@ -246,11 +244,15 @@ func _respawn() -> void:
 	await _blink(1.0)
 
 
+
+# Clears the save and transitions to the game over scene.
 func _game_over() -> void:
 	SaveManager.delete_save()
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 
 
+
+# Blinks the player sprite for the specified duration.
 func _blink(duration: float) -> void:
 	var elapsed: float = 0.0
 
@@ -260,6 +262,7 @@ func _blink(duration: float) -> void:
 		elapsed += INTERVAL
 
 	animated_sprite.visible = true
+
 
 
 ## Processes the collection of an item and updates player resources accordingly.
@@ -275,6 +278,7 @@ func collect(data: CollectibleData) -> void:
 	SaveManager.save(self)
 
 
+
 ## Adds coins to the player score and updates the HUD.
 func add_score(amount: int) -> void:
 	coins += amount
@@ -283,16 +287,22 @@ func add_score(amount: int) -> void:
 	SaveManager.save(self)
 
 
+
+# Handles unhandled input such as pause toggles.
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		hud._toggle_pause()
 
 
+
+# Called when a kill zone body enters; forwards die to bodies that support it.
 func _on_killzone_body_entered(body: Node2D) -> void:
 	if body.has_method("die"):
 		body.die()
 
 
+
+# Called when the feet area enters another area; used for stomp mechanics.
 func _on_feet_area_entered(area: Area2D) -> void:
 	if area.name != "Jumpbox":
 		return

@@ -14,7 +14,7 @@ func _on_btn_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 
-## Deletes the current save file and returns to the main menu.
+# Deletes the current save file and returns to the main menu.
 func _on_btn_deletar_pressed() -> void:
 	SaveManager.delete_save()
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

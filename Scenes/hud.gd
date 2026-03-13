@@ -5,25 +5,15 @@ extends CanvasLayer
 ## pause menu interface including pause toggling and menu navigation.
 
 
-## Label displaying the current number of collected coins.
 @onready var coins_label: Label = $HBoxContainer/CoinsLabel
-
-## Label displaying the current number of remaining lives.
 @onready var lives_label: Label = $HBoxContainer2/CoinsLabel
-
-## Animated icon representing coins in the HUD.
 @onready var coin_icon: AnimatedSprite2D = $HBoxContainer/CoinIcon
-
-## Animated icon representing player lives.
 @onready var heart_icon: AnimatedSprite2D = $HBoxContainer2/HeartIcon
-
-## Pause menu interface shown when the game is paused.
 @onready var pause_menu: CanvasLayer = $PauseMenu
-
-## Button used to toggle the pause state from the HUD.
 @onready var pause_button: TextureButton = $PauseButton
 
 
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
@@ -36,6 +26,7 @@ func _ready() -> void:
 	pause_menu.visible = false
 
 
+# Handles unhandled input such as pause toggles.
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		_toggle_pause()
@@ -51,31 +42,36 @@ func update_lives(amount: int) -> void:
 	lives_label.text = "LIVES = " + str(amount)
 
 
-## Toggles the paused state of the game and shows or hides the pause menu.
+# Toggles the paused state of the game and shows or hides the pause menu.
 func _toggle_pause() -> void:
 	var paused: bool = not get_tree().paused
 	get_tree().paused = paused
 	pause_menu.visible = paused
 
 
+# Called when the pause button is pressed.
 func _on_pause_button_pressed() -> void:
 	_toggle_pause()
 
 
+# Called when the resume button is pressed.
 func _on_btn_retomar_pressed() -> void:
 	_toggle_pause()
 
 
+# Called when the restart button is pressed.
 func _on_btn_reiniciar_pressed() -> void:
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 
 
+# Called when the menu button is pressed.
 func _on_btn_menu_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 
+# Called when the delete save button is pressed.
 func _on_btn_deletar_pressed() -> void:
 	SaveManager.delete_save()
 	get_tree().paused = false

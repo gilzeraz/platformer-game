@@ -30,34 +30,21 @@ const GRAVITY: float = 900.0
 ## Maximum patrol distance from [member start_position], in pixels.
 const PATROL_DISTANCE: float = 100.0
 
-
-## Whether the enemy is actively chasing the player.
 var is_chasing: bool = false
-
-## Whether the enemy has already died. Prevents multiple executions of [method die].
 var is_dead: bool = false
-
-## Current horizontal patrol direction. [code]1.0[/code] = right, [code]-1.0[/code] = left.
 var direction: float = 1.0
-
-## Initial position recorded in [method _ready], used as the patrol center.
 var start_position: Vector2
-
-## Reference to the player node being chased. [code]null[/code] when not chasing.
 var target: Node2D = null
 
-
-## Enemy animated sprite. Must be a direct child named [code]AnimatedSprite2D[/code].
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-
-## Sound player triggered on death. Must be a direct child named [code]AudioStreamPlayer2D[/code].
 @onready var death_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
-
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	start_position = global_position
 
 
+# Physics processing entry point. Handles movement, gravity, and chasing.
 func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
@@ -76,6 +63,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+# Handles patrol movement within the defined patrol distance.
 func _handle_patrol() -> void:
 	velocity.x = direction * SPEED
 
@@ -87,13 +75,7 @@ func _handle_patrol() -> void:
 	animated_sprite.flip_h = direction < 0
 
 
-## Starts the death sequence, grants points to the player, and removes the enemy from the scene.
-##
-## Plays the [code]death[/code] animation and death sound in parallel, waits for both
-## to finish, then calls [method Node.queue_free].
-## [br]Grants [code]5[/code] points to the first node in the [code]player[/code] group
-## via [method add_score].
-## [br][br][color=yellow]Warning:[/color] Multiple calls are ignored via [member is_dead].
+## Plays death animation, grants points to the player, and removes the enemy from the scene.
 func die() -> void:
 	if is_dead:
 		return
@@ -114,21 +96,14 @@ func die() -> void:
 	queue_free()
 
 
-## Starts chasing upon detecting the player in the detection area.
-##
-## Connect to the [code]body_entered[/code] signal of an [Area2D] child named
-## [code]DetectionArea[/code]. Only nodes in the [code]player[/code] group trigger the chase.
+# Starts chasing upon detecting the player in the detection area.
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		is_chasing = true
 		target = body
 
 
-## Stops chasing after [code]5[/code] seconds outside the detection area.
-##
-## Connect to the [code]body_exited[/code] signal of an [Area2D] child named
-## [code]DetectionArea[/code]. The delay prevents abrupt cancellations caused by
-## momentary exits from the area.
+# Stops chasing after 5 seconds outside the detection area.
 func _on_detection_area_body_exited(body: Node2D) -> void:
 	await get_tree().create_timer(5.0).timeout
 
@@ -137,10 +112,7 @@ func _on_detection_area_body_exited(body: Node2D) -> void:
 		target = null
 
 
-## Deals damage to the player upon contact with the enemy hitbox.
-##
-## Connect to the [code]body_entered[/code] signal of an [Area2D] child named
-## [code]Hitbox[/code]. Calls [method take_damage] on the player and stops the chase.
+# Deals damage to the player upon contact with the enemy hitbox.
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		body.take_damage()

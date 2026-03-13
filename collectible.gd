@@ -10,19 +10,18 @@ extends Area2D
 @export var data: CollectibleData
 
 
-## Animated sprite used to visually represent the collectible.
 @onready var sprite: AnimatedSprite2D = $Sprite2D
-
-## Sound played when the collectible is picked up.
 @onready var coin_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if data:
 		sprite.sprite_frames = data.frames
 		sprite.play("idle")
 
 
+# Called when a body enters the collectible area.
 func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("collect"):
 		body.collect(data)
