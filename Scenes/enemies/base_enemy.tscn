@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://bugkabrfo4bak"]
+
+[ext_resource type="Texture2D" uid="uid://dicwquqsdiig1" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Death1.png" id="1_8e1sn"]
+[ext_resource type="Script" uid="uid://i7suci4uirxv" path="res://Scenes/enemies/base_enemy.gd" id="1_clats"]
+[ext_resource type="Texture2D" uid="uid://co4wrle6ju787" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Death2.png" id="2_clats"]
+[ext_resource type="Texture2D" uid="uid://84q1aof04pln" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Death3.png" id="3_6ywbj"]
+[ext_resource type="Texture2D" uid="uid://cirvr3750ibk0" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Death4.png" id="4_0chss"]
+[ext_resource type="Texture2D" uid="uid://cgrlak6dnb27d" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Death5.png" id="5_bhsmu"]
+[ext_resource type="Texture2D" uid="uid://df07tfbw7t66r" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Death6.png" id="6_lk7a1"]
+[ext_resource type="Texture2D" uid="uid://caqu30wwcltf1" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Hurt1.png" id="7_opg0m"]
+[ext_resource type="Texture2D" uid="uid://bumpyln261gnh" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Hurt2.png" id="8_1lq0i"]
+[ext_resource type="Texture2D" uid="uid://dsgpj8pekmj2i" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Idle1.png" id="9_32l6q"]
+[ext_resource type="Texture2D" uid="uid://n2fay61udrtg" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Idle2.png" id="10_kj7dl"]
+[ext_resource type="Texture2D" uid="uid://dmhc8bubssdnt" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Idle3.png" id="11_mxa8e"]
+[ext_resource type="Texture2D" uid="uid://t8uxtd4hsa0w" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Walk1.png" id="12_ucwbw"]
+[ext_resource type="Texture2D" uid="uid://xuixb3m275dn" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Walk2.png" id="13_mnp5a"]
+[ext_resource type="Texture2D" uid="uid://dim2noaa74er5" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Walk3.png" id="14_4bgo7"]
+[ext_resource type="Texture2D" uid="uid://bjyuqrgkbbrt5" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Walk4.png" id="15_us3so"]
+[ext_resource type="Texture2D" uid="uid://c637gxihc0vir" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Walk5.png" id="16_tvjfh"]
+[ext_resource type="Texture2D" uid="uid://o7matmqrogp" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Walk6.png" id="17_26mt2"]
+[ext_resource type="AudioStream" uid="uid://dficheyao0c0t" path="res://assets/sounds/morte/deathh.wav" id="19_6ywbj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iw0tk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8e1sn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_clats")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6ywbj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0chss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bhsmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lk7a1")
+}],
+"loop": false,
+"name": &"death",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_opg0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1lq0i")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_32l6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kj7dl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mxa8e")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ucwbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mnp5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4bgo7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_us3so")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_tvjfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_26mt2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i238n"]
+size = Vector2(20, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ds5h"]
+size = Vector2(233, 118.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ywbj"]
+size = Vector2(20, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clats"]
+size = Vector2(20, 2)
+
+[node name="BaseEnemy" type="CharacterBody2D" unique_id=932756905]
+script = ExtResource("1_clats")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=273930806]
+position = Vector2(21.000002, -39.999992)
+scale = Vector2(0.7578125, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iw0tk")
+animation = &"hurt"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1135832944]
+position = Vector2(0, -24)
+shape = SubResource("RectangleShape2D_i238n")
+debug_color = Color(0, 0.5764706, 0.67058825, 0)
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=979954135]
+position = Vector2(0, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1031747207]
+position = Vector2(0.5, -64.25)
+shape = SubResource("RectangleShape2D_5ds5h")
+debug_color = Color(0, 0.6, 0.69803923, 0)
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=711726259]
+position = Vector2(0, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1999921654]
+position = Vector2(0, -29.5)
+shape = SubResource("RectangleShape2D_6ywbj")
+debug_color = Color(0, 0.6, 0.69803923, 0)
+
+[node name="Jumpbox" type="Area2D" parent="." unique_id=1571528163]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jumpbox" unique_id=2142463210]
+position = Vector2(0, -49)
+shape = SubResource("RectangleShape2D_clats")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=41485229]
+stream = ExtResource("19_6ywbj")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

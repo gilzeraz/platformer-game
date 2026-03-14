@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="CollectibleData" format=3 uid="uid://cb6a70cjicivt"]
+
+[ext_resource type="Texture2D" uid="uid://y8v122euw7n5" path="res://assets/collectibles/Collectibles/diamond/diamond_b.png" id="1_dx8al"]
+[ext_resource type="Script" uid="uid://k64ft3wmcrkw" path="res://assets/collectibles/collectible_data.gd" id="1_ij1ny"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac2ir"]
+atlas = ExtResource("1_dx8al")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3oh2"]
+atlas = ExtResource("1_dx8al")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovjl1"]
+atlas = ExtResource("1_dx8al")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3m6p"]
+atlas = ExtResource("1_dx8al")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8boa1"]
+atlas = ExtResource("1_dx8al")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_45hws"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac2ir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3oh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovjl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3m6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8boa1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_ij1ny")
+name = "Coin Bag"
+coin_value = 10
+frames = SubResource("SpriteFrames_45hws")
+metadata/_custom_type_script = "uid://b7v475osac8nn"

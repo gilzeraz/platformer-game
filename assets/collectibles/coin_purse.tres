@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="CollectibleData" format=3 uid="uid://h4ucxiesvld6"]
+
+[ext_resource type="Script" uid="uid://k64ft3wmcrkw" path="res://assets/collectibles/collectible_data.gd" id="1_53qq2"]
+[ext_resource type="Texture2D" uid="uid://bbr050b3qh0ut" path="res://assets/collectibles/Collectibles/gem/gem_b.png" id="1_cldp4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cd8ux"]
+atlas = ExtResource("1_cldp4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vhpe"]
+atlas = ExtResource("1_cldp4")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u72x8"]
+atlas = ExtResource("1_cldp4")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3jav"]
+atlas = ExtResource("1_cldp4")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8agwb"]
+atlas = ExtResource("1_cldp4")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4nwjr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cd8ux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vhpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u72x8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3jav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8agwb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_53qq2")
+name = "Coin Purse"
+coin_value = 5
+frames = SubResource("SpriteFrames_4nwjr")
+metadata/_custom_type_script = "uid://b7v475osac8nn"

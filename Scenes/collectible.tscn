@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://35o1a2eqqkao"]
+
+[ext_resource type="Script" uid="uid://b7v475osac8nn" path="res://collectible.gd" id="1_athsx"]
+[ext_resource type="Texture2D" uid="uid://y1pd88d64gh8" path="res://assets/collectibles/Collectibles/coin/coin_b.png" id="1_fwdfn"]
+[ext_resource type="AudioStream" uid="uid://clgeva3m5lr61" path="res://assets/sounds/coin.wav" id="3_7xeth"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_athsx"]
+atlas = ExtResource("1_fwdfn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xeth"]
+atlas = ExtResource("1_fwdfn")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixlk2"]
+atlas = ExtResource("1_fwdfn")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hb6c1"]
+atlas = ExtResource("1_fwdfn")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sshb3"]
+atlas = ExtResource("1_fwdfn")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k4w2s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_athsx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xeth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixlk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hb6c1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sshb3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mfbqs"]
+radius = 7.0
+
+[node name="Collectible" type="Area2D" unique_id=247467186]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_athsx")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=133747001]
+texture_filter = 1
+position = Vector2(13.999999, 14.65116)
+scale = Vector2(1.75, 1.831395)
+sprite_frames = SubResource("SpriteFrames_k4w2s")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=885137832]
+texture_filter = 1
+position = Vector2(14.000001, 15.302323)
+shape = SubResource("CircleShape2D_mfbqs")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1004044996]
+stream = ExtResource("3_7xeth")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cwiocox42efh1"]
+
+[ext_resource type="Script" uid="uid://c1em5chpnoh8" path="res://Scenes/game_over.gd" id="1_ojehl"]
+[ext_resource type="Texture2D" uid="uid://buqfcdenrloou" path="res://assets/environment/gameover.jpg" id="2_8fo1c"]
+[ext_resource type="AudioStream" uid="uid://cxoq701yj704r" path="res://assets/sounds/xDeviruchi - Prepare for Battle! .wav" id="3_ek8ke"]
+
+[node name="GameOver" type="CanvasLayer" unique_id=71681856]
+script = ExtResource("1_ojehl")
+
+[node name="Gameover" type="Sprite2D" parent="." unique_id=1922869247]
+position = Vector2(576, 324)
+scale = Vector2(0.9113924, 0.76959616)
+texture = ExtResource("2_8fo1c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1693098564]
+offset_left = 480.0
+offset_top = 296.0
+offset_right = 688.0
+offset_bottom = 400.0
+
+[node name="BtnTentar" type="Button" parent="VBoxContainer" unique_id=1905616280]
+layout_mode = 2
+text = "TRY AGAIN"
+
+[node name="BtnMenu" type="Button" parent="VBoxContainer" unique_id=1312632629]
+layout_mode = 2
+text = "MENU"
+
+[node name="BtnDeletar" type="Button" parent="VBoxContainer" unique_id=575655700]
+layout_mode = 2
+text = "RESTART"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1020953208]
+stream = ExtResource("3_ek8ke")
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/BtnTentar" to="." method="_on_btn_tentar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtnMenu" to="." method="_on_btn_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtnDeletar" to="." method="_on_btn_deletar_pressed"]
