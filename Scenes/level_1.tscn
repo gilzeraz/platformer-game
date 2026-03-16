@@ -1307,38 +1307,20 @@ animation = &"idle"
 frame = 5
 frame_progress = 0.35681176
 
-[node name="Demon" parent="." unique_id=932756905 instance=ExtResource("13_8i23i")]
-position = Vector2(5240, 600)
-
 [node name="Demon2" parent="." unique_id=456082361 instance=ExtResource("13_8i23i")]
 position = Vector2(5120, 600)
 
 [node name="Demon3" parent="." unique_id=1237674577 instance=ExtResource("13_8i23i")]
 position = Vector2(4848, 424)
 
-[node name="Demon4" parent="." unique_id=878168347 instance=ExtResource("13_8i23i")]
-position = Vector2(4960, 480)
-
 [node name="Demon5" parent="." unique_id=679878643 instance=ExtResource("13_8i23i")]
 position = Vector2(4760, 600)
-
-[node name="Demon6" parent="." unique_id=389637862 instance=ExtResource("13_8i23i")]
-position = Vector2(5088, 336)
 
 [node name="Demon7" parent="." unique_id=1122131910 instance=ExtResource("13_8i23i")]
 position = Vector2(4800, 216)
 
 [node name="Demon8" parent="." unique_id=2045996794 instance=ExtResource("13_8i23i")]
 position = Vector2(4360, 192)
-
-[node name="Demon9" parent="." unique_id=811965572 instance=ExtResource("13_8i23i")]
-position = Vector2(4440, 192)
-
-[node name="Demon10" parent="." unique_id=868399290 instance=ExtResource("13_8i23i")]
-position = Vector2(4024, 192)
-
-[node name="Demon11" parent="." unique_id=1907999165 instance=ExtResource("13_8i23i")]
-position = Vector2(4080, 368)
 
 [node name="Demon12" parent="." unique_id=1477650147 instance=ExtResource("13_8i23i")]
 position = Vector2(4184, 312)
@@ -1349,14 +1331,8 @@ position = Vector2(4336, 448)
 [node name="Demon14" parent="." unique_id=1695415975 instance=ExtResource("13_8i23i")]
 position = Vector2(4056, 576)
 
-[node name="Demon15" parent="." unique_id=2115278957 instance=ExtResource("13_8i23i")]
-position = Vector2(3640, 488)
-
 [node name="Demon16" parent="." unique_id=207531980 instance=ExtResource("13_8i23i")]
 position = Vector2(3520, 552)
-
-[node name="Demon17" parent="." unique_id=1992958390 instance=ExtResource("13_8i23i")]
-position = Vector2(3384, 400)
 
 [node name="Demon18" parent="." unique_id=1364488265 instance=ExtResource("13_8i23i")]
 position = Vector2(3664, 288)
@@ -1370,26 +1346,14 @@ position = Vector2(3024, 200)
 [node name="Demon21" parent="." unique_id=1336967916 instance=ExtResource("13_8i23i")]
 position = Vector2(2824, 216)
 
-[node name="Demon22" parent="." unique_id=1167163158 instance=ExtResource("13_8i23i")]
-position = Vector2(2920, 600)
-
 [node name="Demon23" parent="." unique_id=927846440 instance=ExtResource("13_8i23i")]
 position = Vector2(2528, 528)
 
 [node name="Demon24" parent="." unique_id=1654878893 instance=ExtResource("13_8i23i")]
 position = Vector2(2120, 600)
 
-[node name="Demon25" parent="." unique_id=1086383478 instance=ExtResource("13_8i23i")]
-position = Vector2(2136, 288)
-
 [node name="Demon26" parent="." unique_id=246872133 instance=ExtResource("13_8i23i")]
 position = Vector2(2480, 192)
-
-[node name="Demon27" parent="." unique_id=206105566 instance=ExtResource("13_8i23i")]
-position = Vector2(2576, 240)
-
-[node name="Demon28" parent="." unique_id=237628937 instance=ExtResource("13_8i23i")]
-position = Vector2(1872, 376)
 
 [node name="Demon29" parent="." unique_id=358685874 instance=ExtResource("13_8i23i")]
 position = Vector2(1656, 624)
@@ -1399,9 +1363,6 @@ position = Vector2(1720, 216)
 
 [node name="Demon31" parent="." unique_id=1258553406 instance=ExtResource("13_8i23i")]
 position = Vector2(1280, 408)
-
-[node name="Demon32" parent="." unique_id=178147493 instance=ExtResource("13_8i23i")]
-position = Vector2(1144, 248)
 
 [node name="Demon33" parent="." unique_id=1695648904 instance=ExtResource("13_8i23i")]
 position = Vector2(1016, 304)
@@ -1431,10 +1392,66 @@ position = Vector2(304, 360)
 script = ExtResource("22_dlmop")
 
 [node name="Lizard2" parent="." unique_id=1144355763 instance=ExtResource("21_imks0")]
-position = Vector2(464, 488)
+position = Vector2(544, 448)
+script = ExtResource("22_dlmop")
+
+[node name="Lizard3" parent="." unique_id=932756905 instance=ExtResource("21_imks0")]
+position = Vector2(1152, 232)
+script = ExtResource("22_dlmop")
+
+[node name="Lizard4" parent="." unique_id=158018797 instance=ExtResource("21_imks0")]
+position = Vector2(1864, 376)
+script = ExtResource("22_dlmop")
+
+[node name="Lizard5" parent="." unique_id=792453858 instance=ExtResource("21_imks0")]
+position = Vector2(2584, 232)
+script = ExtResource("22_dlmop")
+
+[node name="Lizard6" parent="." unique_id=564653822 instance=ExtResource("21_imks0")]
+position = Vector2(2936, 592)
+script = ExtResource("22_dlmop")
+
+[node name="Lizard7" parent="." unique_id=932966041 instance=ExtResource("21_imks0")]
+position = Vector2(3648, 480)
+script = ExtResource("22_dlmop")
+
+[node name="Lizard8" parent="." unique_id=447944293 instance=ExtResource("21_imks0")]
+position = Vector2(4016, 184)
+script = ExtResource("22_dlmop")
+
+[node name="Lizard9" parent="." unique_id=805017308 instance=ExtResource("21_imks0")]
+position = Vector2(5080, 328)
+script = ExtResource("22_dlmop")
+
+[node name="Lizard10" parent="." unique_id=1952498174 instance=ExtResource("21_imks0")]
+position = Vector2(5248, 592)
 script = ExtResource("22_dlmop")
 
 [node name="Jin" parent="." unique_id=460218378 instance=ExtResource("23_sda17")]
-position = Vector2(384, 536)
+position = Vector2(392, 528)
+
+[node name="Jin2" parent="." unique_id=457987676 instance=ExtResource("23_sda17")]
+position = Vector2(1184, 632)
+
+[node name="Jin3" parent="." unique_id=675967193 instance=ExtResource("23_sda17")]
+position = Vector2(1840, 632)
+
+[node name="Jin4" parent="." unique_id=1513056106 instance=ExtResource("23_sda17")]
+position = Vector2(2816, 312)
+
+[node name="Jin6" parent="." unique_id=1070599 instance=ExtResource("23_sda17")]
+position = Vector2(3384, 408)
+
+[node name="Jin7" parent="." unique_id=1033590288 instance=ExtResource("23_sda17")]
+position = Vector2(4088, 360)
+
+[node name="Jin8" parent="." unique_id=154203792 instance=ExtResource("23_sda17")]
+position = Vector2(4456, 192)
+
+[node name="Jin9" parent="." unique_id=635374900 instance=ExtResource("23_sda17")]
+position = Vector2(5016, 504)
+
+[node name="Jin5" parent="." unique_id=401545698 instance=ExtResource("23_sda17")]
+position = Vector2(2128, 288)
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
