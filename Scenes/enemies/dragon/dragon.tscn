@@ -8,6 +8,7 @@
 script = ExtResource("2_ixld7")
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=273930806]
+texture_filter = 1
 position = Vector2(8, -30)
 scale = Vector2(0.53515625, 0.62890625)
 sprite_frames = ExtResource("3_ffg8e")

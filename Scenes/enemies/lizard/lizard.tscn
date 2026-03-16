@@ -6,6 +6,7 @@
 [node name="Lizard" unique_id=932756905 instance=ExtResource("1_52hnt")]
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=273930806]
+texture_filter = 1
 position = Vector2(16.000004, -22)
 scale = Vector2(0.81640625, 0.7809103)
 sprite_frames = ExtResource("2_wtfhd")
