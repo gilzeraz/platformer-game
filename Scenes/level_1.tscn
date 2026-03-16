@@ -18,8 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://bs6rpcksnvwn6" path="res://assets/environment/fence_2.png" id="17_vr6f4"]
 [ext_resource type="Texture2D" uid="uid://dw3wamjmyoywr" path="res://assets/environment/grass_3.png" id="19_u0op5"]
 [ext_resource type="Texture2D" uid="uid://og47uqth3i7u" path="res://assets/environment/lamp.png" id="20_1f27d"]
+[ext_resource type="PackedScene" uid="uid://de3giwxim2pwo" path="res://Scenes/enemies/lizard/lizard.tscn" id="21_imks0"]
 [ext_resource type="Texture2D" uid="uid://diks8y1hotplh" path="res://assets/environment/rock_1.png" id="21_pm77i"]
+[ext_resource type="Script" uid="uid://bgq7d0lrjb0p2" path="res://Scenes/lizard.gd" id="22_dlmop"]
 [ext_resource type="Texture2D" uid="uid://cwgi7jn1yhfs4" path="res://assets/environment/rock_2.png" id="22_xub2v"]
+[ext_resource type="PackedScene" uid="uid://bijbx010uj4d2" path="res://Scenes/enemies/dragon/dragon.tscn" id="23_sda17"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6444e"]
 size = Vector2(9062.5, 37)
@@ -680,6 +683,206 @@ position = Vector2(2085.7942, -122.436325)
 scale = Vector2(3.4803925, 3.4803925)
 texture = ExtResource("10_8i23i")
 
+[node name="Grass43" type="Sprite2D" parent="Fence2" unique_id=1725429710]
+position = Vector2(2437.9607, -122.43625)
+scale = Vector2(2.3843205, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass44" type="Sprite2D" parent="Fence2" unique_id=130415473]
+position = Vector2(2342.108, -122.43628)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass45" type="Sprite2D" parent="Fence2" unique_id=2020491344]
+position = Vector2(2365.951, -122.43628)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass46" type="Sprite2D" parent="Fence2" unique_id=1176554214]
+position = Vector2(2389.7942, -122.43628)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass47" type="Sprite2D" parent="Fence2" unique_id=307822068]
+position = Vector2(2419.5981, -122.43628)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass48" type="Sprite2D" parent="Fence2" unique_id=1078098240]
+position = Vector2(2849.2546, -122.43625)
+scale = Vector2(2.3843205, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass49" type="Sprite2D" parent="Fence2" unique_id=284656741]
+position = Vector2(2753.4019, -122.43628)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass50" type="Sprite2D" parent="Fence2" unique_id=1646379656]
+position = Vector2(2777.2449, -122.43628)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass51" type="Sprite2D" parent="Fence2" unique_id=1029096839]
+position = Vector2(2801.0881, -122.43628)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass52" type="Sprite2D" parent="Fence2" unique_id=1276369368]
+position = Vector2(2830.892, -122.43628)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass53" type="Sprite2D" parent="Fence2" unique_id=1026188823]
+position = Vector2(3099.6077, -122.43625)
+scale = Vector2(2.3843205, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass54" type="Sprite2D" parent="Fence2" unique_id=1603340227]
+position = Vector2(3003.755, -122.43628)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass55" type="Sprite2D" parent="Fence2" unique_id=812245601]
+position = Vector2(3027.598, -122.43628)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass56" type="Sprite2D" parent="Fence2" unique_id=1833847288]
+position = Vector2(3051.4412, -122.43628)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass57" type="Sprite2D" parent="Fence2" unique_id=1634131868]
+position = Vector2(3081.245, -122.43628)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass58" type="Sprite2D" parent="Fence2" unique_id=1727880696]
+position = Vector2(3171.137, -122.43625)
+scale = Vector2(2.3843205, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass59" type="Sprite2D" parent="Fence2" unique_id=1892565119]
+position = Vector2(3075.2842, -122.43628)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass60" type="Sprite2D" parent="Fence2" unique_id=1130733655]
+position = Vector2(3099.1274, -122.43628)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass61" type="Sprite2D" parent="Fence2" unique_id=144688962]
+position = Vector2(3122.9707, -122.43628)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass62" type="Sprite2D" parent="Fence2" unique_id=1505379027]
+position = Vector2(3152.7744, -122.43628)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass63" type="Sprite2D" parent="Fence2" unique_id=307523925]
+position = Vector2(3403.608, 175.60297)
+scale = Vector2(2.3843205, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass64" type="Sprite2D" parent="Fence2" unique_id=355548632]
+position = Vector2(3307.7551, 175.60297)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass65" type="Sprite2D" parent="Fence2" unique_id=291951141]
+position = Vector2(3331.5984, 175.60297)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass66" type="Sprite2D" parent="Fence2" unique_id=1417104322]
+position = Vector2(3355.4417, 175.60297)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass67" type="Sprite2D" parent="Fence2" unique_id=1170107075]
+position = Vector2(3385.2454, 175.60297)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass68" type="Sprite2D" parent="Fence2" unique_id=2107761786]
+position = Vector2(3653.961, 175.60292)
+scale = Vector2(2.3843205, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass69" type="Sprite2D" parent="Fence2" unique_id=2065808884]
+position = Vector2(3558.1082, 175.60292)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass70" type="Sprite2D" parent="Fence2" unique_id=1063774740]
+position = Vector2(3581.9514, 175.60292)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass71" type="Sprite2D" parent="Fence2" unique_id=1759809369]
+position = Vector2(3605.7947, 175.60292)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass72" type="Sprite2D" parent="Fence2" unique_id=797950015]
+position = Vector2(3635.5984, 175.60292)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass73" type="Sprite2D" parent="Fence2" unique_id=674967074]
+position = Vector2(3779.1375, 175.60292)
+scale = Vector2(2.3843205, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass74" type="Sprite2D" parent="Fence2" unique_id=526514842]
+position = Vector2(3683.2847, 175.60292)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass75" type="Sprite2D" parent="Fence2" unique_id=2013536067]
+position = Vector2(3707.128, 175.60292)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass76" type="Sprite2D" parent="Fence2" unique_id=116969479]
+position = Vector2(3730.9712, 175.60292)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass77" type="Sprite2D" parent="Fence2" unique_id=720320647]
+position = Vector2(3760.775, 175.60292)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass78" type="Sprite2D" parent="Fence2" unique_id=930592376]
+position = Vector2(3826.8232, 175.60292)
+scale = Vector2(2.3843205, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass79" type="Sprite2D" parent="Fence2" unique_id=447633008]
+position = Vector2(3730.9707, 175.60292)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass80" type="Sprite2D" parent="Fence2" unique_id=1227537515]
+position = Vector2(3754.814, 175.60292)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass81" type="Sprite2D" parent="Fence2" unique_id=1064954235]
+position = Vector2(3778.6572, 175.60292)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
+[node name="Grass82" type="Sprite2D" parent="Fence2" unique_id=1061678686]
+position = Vector2(3808.461, 175.60292)
+scale = Vector2(3.4803925, 3.4803925)
+texture = ExtResource("10_8i23i")
+
 [node name="Rock1" type="Sprite2D" parent="Fence2" unique_id=2043151766]
 position = Vector2(47.686256, 119.21569)
 scale = Vector2(2.667561, 2.6675608)
@@ -1209,15 +1412,6 @@ position = Vector2(992, 520)
 [node name="Demon35" parent="." unique_id=1091460613 instance=ExtResource("13_8i23i")]
 position = Vector2(632, 616)
 
-[node name="Demon36" parent="." unique_id=1308159180 instance=ExtResource("13_8i23i")]
-position = Vector2(544, 456)
-
-[node name="Demon37" parent="." unique_id=1115824373 instance=ExtResource("13_8i23i")]
-position = Vector2(456, 496)
-
-[node name="Demon38" parent="." unique_id=622935022 instance=ExtResource("13_8i23i")]
-position = Vector2(344, 360)
-
 [node name="Demon39" parent="." unique_id=1858751502 instance=ExtResource("13_8i23i")]
 position = Vector2(584, 232)
 
@@ -1231,5 +1425,16 @@ position = Vector2(224, 624)
 stream = ExtResource("11_af3po")
 volume_db = -5.0
 autoplay = true
+
+[node name="Lizard" parent="." unique_id=1745886730 instance=ExtResource("21_imks0")]
+position = Vector2(304, 360)
+script = ExtResource("22_dlmop")
+
+[node name="Lizard2" parent="." unique_id=1144355763 instance=ExtResource("21_imks0")]
+position = Vector2(464, 488)
+script = ExtResource("22_dlmop")
+
+[node name="Jin" parent="." unique_id=460218378 instance=ExtResource("23_sda17")]
+position = Vector2(384, 536)
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]

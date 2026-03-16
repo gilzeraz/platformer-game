@@ -1,10 +1,15 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://sjlhof3jfu1x"]
 
+[ext_resource type="Texture2D" uid="uid://ctiiclwmikdb7" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/lizard/Attack1.png" id="1_43fuo"]
 [ext_resource type="Texture2D" uid="uid://tp6mqs1j0n8k" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/lizard/Death1.png" id="1_nfr4s"]
+[ext_resource type="Texture2D" uid="uid://c5bckdh4je1rq" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/lizard/Attack2.png" id="2_dgkc5"]
 [ext_resource type="Texture2D" uid="uid://c8ts3ew3kg07k" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/lizard/Death2.png" id="2_enb6y"]
+[ext_resource type="Texture2D" uid="uid://tqlidmmfocyn" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/lizard/Attack3.png" id="3_07cwl"]
 [ext_resource type="Texture2D" uid="uid://c07f0wh3l38xa" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/lizard/Death3.png" id="3_a7pv2"]
+[ext_resource type="Texture2D" uid="uid://dtl0vijdskmm0" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/lizard/Attack4.png" id="4_a6ail"]
 [ext_resource type="Texture2D" uid="uid://c2f5eff4q3e0n" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/lizard/Death4.png" id="4_u46cl"]
 [ext_resource type="Texture2D" uid="uid://dlaktd6ytebfy" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/lizard/Death5.png" id="5_8fnyc"]
+[ext_resource type="Texture2D" uid="uid://w7g05lji5my2" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/lizard/Attack5.png" id="5_w8tea"]
 [ext_resource type="Texture2D" uid="uid://c3dr06vjv38rf" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/lizard/Death6.png" id="6_43fuo"]
 [ext_resource type="Texture2D" uid="uid://dwx0my1eljulo" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/lizard/Hurt1.png" id="7_dgkc5"]
 [ext_resource type="Texture2D" uid="uid://darg7ooblur0u" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/lizard/Hurt2.png" id="8_07cwl"]
@@ -18,8 +23,48 @@
 [ext_resource type="Texture2D" uid="uid://c7ba6egk0onf3" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/lizard/Walk5.png" id="16_x62rr"]
 [ext_resource type="Texture2D" uid="uid://byfwxquk71qky" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/lizard/Walk6.png" id="17_o6851"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8ujk"]
+atlas = ExtResource("1_43fuo")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5c5p"]
+atlas = ExtResource("2_dgkc5")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rybv"]
+atlas = ExtResource("3_07cwl")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rs8gg"]
+atlas = ExtResource("4_a6ail")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2rjs"]
+atlas = ExtResource("5_w8tea")
+region = Rect2(0, 0, 256, 256)
+
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8ujk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5c5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rybv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rs8gg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2rjs")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_nfr4s")

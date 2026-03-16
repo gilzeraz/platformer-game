@@ -4,14 +4,16 @@
 [ext_resource type="Script" uid="uid://dhpnphawlc6u3" path="res://Scenes/enemies/dragon/dragon.gd" id="2_ixld7"]
 [ext_resource type="SpriteFrames" uid="uid://pmoiyfk6a281" path="res://Scenes/enemies/dragon/dragon_sprite_frames.tres" id="3_ffg8e"]
 
-[node name="Dragon" unique_id=932756905 instance=ExtResource("1_4ub2e")]
+[node name="Jin" unique_id=932756905 instance=ExtResource("1_4ub2e")]
 script = ExtResource("2_ixld7")
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=273930806]
-position = Vector2(-6, -40)
+position = Vector2(8, -30)
 scale = Vector2(0.53515625, 0.62890625)
 sprite_frames = ExtResource("3_ffg8e")
-animation = &"death"
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1135832944]
+position = Vector2(0, -27.5)
 
 [node name="DetectionArea" parent="." index="2" unique_id=979954135]
 collision_layer = 0
@@ -20,6 +22,12 @@ collision_mask = 2
 [node name="Hitbox" parent="." index="3" unique_id=711726259]
 collision_layer = 0
 collision_mask = 2
+
+[node name="CollisionShape2D" parent="Hitbox" index="0" unique_id=1999921654]
+position = Vector2(0, -34.75)
+
+[node name="CollisionShape2D" parent="Jumpbox" parent_id_path=PackedInt32Array(1571528163) index="0" unique_id=2142463210]
+position = Vector2(0, -53)
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

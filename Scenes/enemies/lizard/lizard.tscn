@@ -6,18 +6,31 @@
 [node name="Lizard" unique_id=932756905 instance=ExtResource("1_52hnt")]
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=273930806]
-position = Vector2(15, -31.000002)
-scale = Vector2(1.078125, 1.03125)
+position = Vector2(16.000004, -22)
+scale = Vector2(0.81640625, 0.7809103)
 sprite_frames = ExtResource("2_wtfhd")
 animation = &"death"
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1135832944]
+position = Vector2(0, -16)
 
 [node name="DetectionArea" parent="." index="2" unique_id=979954135]
 collision_layer = 0
 collision_mask = 2
 
+[node name="CollisionShape2D" parent="DetectionArea" index="0" unique_id=1031747207]
+position = Vector2(0, -64)
+
 [node name="Hitbox" parent="." index="3" unique_id=711726259]
 collision_layer = 0
 collision_mask = 2
 
+[node name="CollisionShape2D" parent="Hitbox" index="0" unique_id=1999921654]
+position = Vector2(0, -21)
+
+[node name="CollisionShape2D" parent="Jumpbox" parent_id_path=PackedInt32Array(1571528163) index="0" unique_id=2142463210]
+position = Vector2(0, -33)
+
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="Jumpbox" to="." method="_on_jumpbox_body_entered"]
