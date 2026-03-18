@@ -1,85 +1,145 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://pmoiyfk6a281"]
 
-[ext_resource type="Texture2D" uid="uid://dntypdql0rl82" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Death1.png" id="1_1flkd"]
-[ext_resource type="Texture2D" uid="uid://dqfyy3327awc5" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Death2.png" id="2_5e8ym"]
-[ext_resource type="Texture2D" uid="uid://dcy0ca2ew4ady" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Death3.png" id="3_8uxqq"]
-[ext_resource type="Texture2D" uid="uid://ce8xnvopsxroa" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Death4.png" id="4_gwsxt"]
-[ext_resource type="Texture2D" uid="uid://drt05snyf51to" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Death5.png" id="5_wmatq"]
-[ext_resource type="Texture2D" uid="uid://cvt5xusg6dc3w" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Hurt1.png" id="6_gefir"]
-[ext_resource type="Texture2D" uid="uid://brw6yfr7hh6o6" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Hurt2.png" id="7_sup2w"]
-[ext_resource type="Texture2D" uid="uid://d3mvxlpc3plqc" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Idle1.png" id="8_n3ery"]
-[ext_resource type="Texture2D" uid="uid://hi3tti37q1pe" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Idle2.png" id="9_7102r"]
-[ext_resource type="Texture2D" uid="uid://c7jtpg2mlob5" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Idle3.png" id="10_mx4fw"]
-[ext_resource type="Texture2D" uid="uid://4q5e5ytv8dna" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Walk1.png" id="11_bk7yf"]
-[ext_resource type="Texture2D" uid="uid://6qmwm7maniip" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Walk2.png" id="12_ys325"]
-[ext_resource type="Texture2D" uid="uid://f1li4dman180" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Walk3.png" id="13_jn3i2"]
-[ext_resource type="Texture2D" uid="uid://cjmpsfuvya005" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Walk4.png" id="14_v51vn"]
-[ext_resource type="Texture2D" uid="uid://nctivaxr27e6" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/dragon/Walk5.png" id="15_3xtty"]
+[ext_resource type="Texture2D" uid="uid://bnjvibpathoho" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/jinn_animation/Attack1.png" id="1_1flkd"]
+[ext_resource type="Texture2D" uid="uid://dv51t2lx7puv6" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/jinn_animation/Attack2.png" id="2_5e8ym"]
+[ext_resource type="Texture2D" uid="uid://caq33d1xd4fnh" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/jinn_animation/Attack3.png" id="3_8uxqq"]
+[ext_resource type="Texture2D" uid="uid://cvagrwru4i5uj" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/jinn_animation/Attack4.png" id="4_gwsxt"]
+[ext_resource type="Texture2D" uid="uid://bxpl3qpnhh2b7" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/jinn_animation/Death1.png" id="5_wmatq"]
+[ext_resource type="Texture2D" uid="uid://cmo6nnabib580" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/jinn_animation/Death2.png" id="6_gefir"]
+[ext_resource type="Texture2D" uid="uid://cxa8pvqdsqpko" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/jinn_animation/Death3.png" id="7_sup2w"]
+[ext_resource type="Texture2D" uid="uid://cud73t7pcb5lv" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/jinn_animation/Death4.png" id="8_n3ery"]
+[ext_resource type="Texture2D" uid="uid://dvisxeu7didro" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/jinn_animation/Idle1.png" id="9_7102r"]
+[ext_resource type="Texture2D" uid="uid://d2uykg2aymlnj" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/jinn_animation/Idle2.png" id="10_mx4fw"]
+[ext_resource type="Texture2D" uid="uid://bquh51lfcasxm" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/jinn_animation/Idle3.png" id="11_bk7yf"]
+[ext_resource type="Texture2D" uid="uid://cew5f12xoguyr" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/jinn_animation/Flight1.png" id="12_ys325"]
+[ext_resource type="Texture2D" uid="uid://c6e5de22y0xee" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/jinn_animation/Flight2.png" id="13_jn3i2"]
+[ext_resource type="Texture2D" uid="uid://c7uv2kuj1pa37" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/jinn_animation/Flight3.png" id="14_v51vn"]
+[ext_resource type="Texture2D" uid="uid://n53li3iv3g01" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/jinn_animation/Flight4.png" id="15_3xtty"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmtw0"]
+atlas = ExtResource("1_1flkd")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo8ja"]
+atlas = ExtResource("2_5e8ym")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_saktx"]
+atlas = ExtResource("3_8uxqq")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0htrk"]
+atlas = ExtResource("4_gwsxt")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02u50"]
+atlas = ExtResource("5_wmatq")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vqrt"]
+atlas = ExtResource("6_gefir")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b2ud"]
+atlas = ExtResource("7_sup2w")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6h4r"]
+atlas = ExtResource("8_n3ery")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdpg3"]
+atlas = ExtResource("9_7102r")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhqml"]
+atlas = ExtResource("10_mx4fw")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31nyl"]
+atlas = ExtResource("11_bk7yf")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12rko"]
+atlas = ExtResource("12_ys325")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0afbb"]
+atlas = ExtResource("13_jn3i2")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74gp7"]
+atlas = ExtResource("14_v51vn")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l54sv"]
+atlas = ExtResource("15_3xtty")
+region = Rect2(0, 0, 128, 128)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_1flkd")
+"texture": SubResource("AtlasTexture_jmtw0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_5e8ym")
+"texture": SubResource("AtlasTexture_eo8ja")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_8uxqq")
+"texture": SubResource("AtlasTexture_saktx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_gwsxt")
+"texture": SubResource("AtlasTexture_0htrk")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02u50")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_wmatq")
+"texture": SubResource("AtlasTexture_6vqrt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7b2ud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6h4r")
 }],
 "loop": false,
 "name": &"death",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_gefir")
+"texture": SubResource("AtlasTexture_qdpg3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_sup2w")
-}],
-"loop": false,
-"name": &"hurt",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_n3ery")
+"texture": SubResource("AtlasTexture_mhqml")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_7102r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_mx4fw")
+"texture": SubResource("AtlasTexture_31nyl")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_bk7yf")
+"texture": SubResource("AtlasTexture_12rko")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_ys325")
+"texture": SubResource("AtlasTexture_0afbb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_jn3i2")
+"texture": SubResource("AtlasTexture_74gp7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_v51vn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_3xtty")
+"texture": SubResource("AtlasTexture_l54sv")
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 10.0
 }]

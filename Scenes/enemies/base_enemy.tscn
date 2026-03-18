@@ -3,9 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://dicwquqsdiig1" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Death1.png" id="1_8e1sn"]
 [ext_resource type="Script" uid="uid://i7suci4uirxv" path="res://Scenes/enemies/base_enemy.gd" id="1_clats"]
 [ext_resource type="Texture2D" uid="uid://co4wrle6ju787" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Death2.png" id="2_clats"]
+[ext_resource type="Texture2D" uid="uid://cgn6iu7dgpqio" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Attack1.png" id="2_opg0m"]
+[ext_resource type="Texture2D" uid="uid://dg6rxauns1b4h" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Attack2.png" id="3_1lq0i"]
 [ext_resource type="Texture2D" uid="uid://84q1aof04pln" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Death3.png" id="3_6ywbj"]
 [ext_resource type="Texture2D" uid="uid://cirvr3750ibk0" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Death4.png" id="4_0chss"]
+[ext_resource type="Texture2D" uid="uid://cuqdcursiei4r" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Attack3.png" id="4_32l6q"]
 [ext_resource type="Texture2D" uid="uid://cgrlak6dnb27d" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Death5.png" id="5_bhsmu"]
+[ext_resource type="Texture2D" uid="uid://in6oeeui0513" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Attack4.png" id="5_kj7dl"]
 [ext_resource type="Texture2D" uid="uid://df07tfbw7t66r" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Death6.png" id="6_lk7a1"]
 [ext_resource type="Texture2D" uid="uid://caqu30wwcltf1" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Hurt1.png" id="7_opg0m"]
 [ext_resource type="Texture2D" uid="uid://bumpyln261gnh" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Hurt2.png" id="8_1lq0i"]
@@ -20,8 +24,41 @@
 [ext_resource type="Texture2D" uid="uid://o7matmqrogp" path="res://assets/enemies/free-rpg-monster-sprites-pixel-art/PNG/demon/Walk6.png" id="17_26mt2"]
 [ext_resource type="AudioStream" uid="uid://dficheyao0c0t" path="res://assets/sounds/morte/deathh.wav" id="19_6ywbj"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxa8e"]
+atlas = ExtResource("2_opg0m")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucwbw"]
+atlas = ExtResource("3_1lq0i")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnp5a"]
+atlas = ExtResource("4_32l6q")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bgo7"]
+atlas = ExtResource("5_kj7dl")
+region = Rect2(0, 0, 256, 256)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_iw0tk"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxa8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucwbw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnp5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bgo7")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_8e1sn")
@@ -95,13 +132,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i238n"]
-size = Vector2(20, 48)
+size = Vector2(20, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ds5h"]
 size = Vector2(233, 118.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ywbj"]
-size = Vector2(20, 47)
+size = Vector2(22, 42.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clats"]
 size = Vector2(20, 2)
@@ -110,10 +147,11 @@ size = Vector2(20, 2)
 script = ExtResource("1_clats")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=273930806]
+texture_filter = 1
 position = Vector2(21.000002, -39.999992)
 scale = Vector2(0.7578125, 0.6875)
 sprite_frames = SubResource("SpriteFrames_iw0tk")
-animation = &"hurt"
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1135832944]
 position = Vector2(0, -24)
@@ -147,4 +185,5 @@ shape = SubResource("RectangleShape2D_clats")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=41485229]
 stream = ExtResource("19_6ywbj")
 
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
