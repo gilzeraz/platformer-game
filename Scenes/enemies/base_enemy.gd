@@ -5,6 +5,7 @@ class_name BaseEnemy
 ## Handles patrol, player detection, chase, attack with animation,
 ## damage dealt only during attack frames, death system and scoring.
 
+
 #region Constants
 ## Movement speed during patrol, in pixels per second.
 const SPEED: float = 60.0
@@ -122,8 +123,7 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 
 ## Plays death animation, grants points and removes the enemy.
 func die() -> void:
-	if is_dead:
-		return
+	if is_dead: return
 
 	is_dead = true
 	velocity = Vector2.ZERO
