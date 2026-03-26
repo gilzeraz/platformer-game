@@ -11,7 +11,7 @@ extends CanvasLayer
 @onready var heart_icon: AnimatedSprite2D = $HBoxContainer2/HeartIcon
 @onready var pause_menu: CanvasLayer = $PauseMenu
 @onready var pause_button: TextureButton = $PauseButton
-
+@onready var click_sound: AudioStreamPlayer = $AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -47,32 +47,41 @@ func _toggle_pause() -> void:
 	var paused: bool = not get_tree().paused
 	get_tree().paused = paused
 	pause_menu.visible = paused
+	
+# Plays the button pressed sound.
+func _play_click():
+	click_sound.play()
 
 
 # Called when the pause button is pressed.
 func _on_pause_button_pressed() -> void:
+	_play_click()
 	_toggle_pause()
 
 
 # Called when the resume button is pressed.
 func _on_btn_retomar_pressed() -> void:
+	_play_click()
 	_toggle_pause()
 
 
 # Called when the restart button is pressed.
 func _on_btn_reiniciar_pressed() -> void:
+	_play_click()
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 
 
 # Called when the menu button is pressed.
 func _on_btn_menu_pressed() -> void:
+	_play_click()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 
 # Called when the delete save button is pressed.
 func _on_btn_deletar_pressed() -> void:
+	_play_click()
 	SaveManager.delete_save()
 	get_tree().paused = false
 	get_tree().reload_current_scene()

@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bs6rpcksnvwn6" path="res://assets/environment/fence_2.png" id="17_vr6f4"]
 [ext_resource type="Texture2D" uid="uid://dw3wamjmyoywr" path="res://assets/environment/grass_3.png" id="19_u0op5"]
 [ext_resource type="Texture2D" uid="uid://og47uqth3i7u" path="res://assets/environment/lamp.png" id="20_1f27d"]
+[ext_resource type="PackedScene" uid="uid://ct8uqsesn8wa7" path="res://Scenes/portal.tscn" id="21_imks0"]
 [ext_resource type="Texture2D" uid="uid://diks8y1hotplh" path="res://assets/environment/rock_1.png" id="21_pm77i"]
 [ext_resource type="Texture2D" uid="uid://cwgi7jn1yhfs4" path="res://assets/environment/rock_2.png" id="22_xub2v"]
 
@@ -1096,14 +1097,6 @@ animation = &"idle"
 frame = 5
 frame_progress = 0.35681176
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=678336295]
-texture_filter = 1
-position = Vector2(5336, 536)
-sprite_frames = SubResource("SpriteFrames_8i23i")
-animation = &"idle"
-frame = 5
-frame_progress = 0.35681176
-
 [node name="Demon" parent="." unique_id=932756905 instance=ExtResource("13_8i23i")]
 position = Vector2(5240, 600)
 
@@ -1225,11 +1218,14 @@ position = Vector2(584, 232)
 position = Vector2(1768, 504)
 
 [node name="Player" parent="." unique_id=23372859 instance=ExtResource("1_vk57k")]
-position = Vector2(224, 624)
+position = Vector2(4992, 176)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1490410453]
 stream = ExtResource("11_af3po")
 volume_db = -5.0
 autoplay = true
+
+[node name="Area2D" parent="." unique_id=1698659019 instance=ExtResource("21_imks0")]
+position = Vector2(5336, 536)
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]

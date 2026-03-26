@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bdmnblolqr324" path="res://assets/collectibles/Collectibles/coin/coin_w.png" id="2_fccik"]
 [ext_resource type="Texture2D" uid="uid://3k7fdapvii4e" path="res://assets/collectibles/Collectibles/heart/heart_w.png" id="3_bjfho"]
 [ext_resource type="Texture2D" uid="uid://vm6300kl2lbp" path="res://assets/environment/pause.png" id="4_6fbih"]
+[ext_resource type="AudioStream" uid="uid://d14542lxw0mbh" path="res://assets/sounds/dragon-studio-button-press-382713.mp3" id="5_t1xeu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjfho"]
 atlas = ExtResource("2_fccik")
@@ -159,6 +160,9 @@ text = "MENU"
 [node name="BtnDeletar" type="Button" parent="PauseMenu/VBoxContainer" unique_id=522478324]
 layout_mode = 2
 text = "DELETE"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1624064383]
+stream = ExtResource("5_t1xeu")
 
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/BtnRetomar" to="." method="_on_btn_retomar_pressed"]
