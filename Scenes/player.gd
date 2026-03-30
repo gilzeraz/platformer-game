@@ -53,7 +53,7 @@ var camera_fixed_y: float = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_to_group("player")
-	spawn_position = position
+	spawn_position = position  # posição definida no editor da cena
 	_load_save()
 
 	hud.update_coins(coins)
@@ -64,7 +64,7 @@ func _ready() -> void:
 	camera_fixed_y = camera.global_position.y
 	camera.limit_left = 0
 	camera.limit_top = 0
-	camera.limit_right = 9999999
+	camera.limit_right = 5395
 	camera.limit_bottom = 2000
 
 
@@ -76,10 +76,9 @@ func _load_save() -> void:
 	if data.is_empty():
 		return
 
+	# Restaura apenas vidas e moedas — posição vem do editor da cena
 	extra_lives = data["lives"]
 	coins = data["coins"]
-	position = Vector2(data["pos_x"], data["pos_y"])
-	spawn_position = position
 
 
 
