@@ -11,7 +11,6 @@ script = ExtResource("2_ixld7")
 position = Vector2(-6, -40)
 scale = Vector2(0.53515625, 0.62890625)
 sprite_frames = ExtResource("3_ffg8e")
-animation = &"death"
 
 [node name="DetectionArea" parent="." index="2" unique_id=979954135]
 collision_layer = 0

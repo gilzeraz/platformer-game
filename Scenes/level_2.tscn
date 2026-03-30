@@ -13,9 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://drs0tb2pejgk3" path="res://assets/environment/shop_anim.png" id="10_af3po"]
 [ext_resource type="Resource" uid="uid://cb6a70cjicivt" path="res://assets/collectibles/coin_bag.tres" id="14_6ssoq"]
 [ext_resource type="Resource" uid="uid://h4ucxiesvld6" path="res://assets/collectibles/coin_purse.tres" id="15_imks0"]
+[ext_resource type="PackedScene" uid="uid://bijbx010uj4d2" path="res://Scenes/enemies/dragon/dragon.tscn" id="19_e2piv"]
 [ext_resource type="Texture2D" uid="uid://dw3wamjmyoywr" path="res://assets/environment/grass_3.png" id="19_u0op5"]
 [ext_resource type="Texture2D" uid="uid://og47uqth3i7u" path="res://assets/environment/lamp.png" id="20_1f27d"]
 [ext_resource type="AudioStream" uid="uid://c5qm3qx804n68" path="res://assets/sounds/xDeviruchi - Decisive Battle.wav" id="20_e2piv"]
+[ext_resource type="PackedScene" uid="uid://de3giwxim2pwo" path="res://Scenes/enemies/lizard/lizard.tscn" id="20_ijtdf"]
+[ext_resource type="PackedScene" uid="uid://38o82tswcb2s" path="res://Scenes/enemies/demon/demon.tscn" id="21_ijtdf"]
 [ext_resource type="Texture2D" uid="uid://diks8y1hotplh" path="res://assets/environment/rock_1.png" id="21_pm77i"]
 [ext_resource type="Texture2D" uid="uid://cwgi7jn1yhfs4" path="res://assets/environment/rock_2.png" id="22_xub2v"]
 
@@ -1209,5 +1212,92 @@ position = Vector2(160, 624)
 stream = ExtResource("20_e2piv")
 volume_db = -5.0
 autoplay = true
+
+[node name="Dragon" parent="." unique_id=932756905 instance=ExtResource("19_e2piv")]
+position = Vector2(587, 242)
+
+[node name="Dragon2" parent="." unique_id=308986127 instance=ExtResource("19_e2piv")]
+position = Vector2(1270, 411)
+
+[node name="Dragon3" parent="." unique_id=1803343197 instance=ExtResource("19_e2piv")]
+position = Vector2(1744, 627)
+
+[node name="Dragon4" parent="." unique_id=876077685 instance=ExtResource("19_e2piv")]
+position = Vector2(2514, 529)
+
+[node name="Dragon5" parent="." unique_id=617576260 instance=ExtResource("19_e2piv")]
+position = Vector2(2902, 191)
+
+[node name="Dragon6" parent="." unique_id=1623426807 instance=ExtResource("19_e2piv")]
+position = Vector2(4054, 575)
+
+[node name="Dragon7" parent="." unique_id=1164077467 instance=ExtResource("19_e2piv")]
+position = Vector2(3372, 410)
+
+[node name="Dragon8" parent="." unique_id=1846265284 instance=ExtResource("19_e2piv")]
+position = Vector2(4394, 191)
+
+[node name="Dragon9" parent="." unique_id=1003912374 instance=ExtResource("19_e2piv")]
+position = Vector2(5090, 338)
+
+[node name="Lizard" parent="." unique_id=799370814 instance=ExtResource("20_ijtdf")]
+position = Vector2(312, 363)
+
+[node name="Lizard2" parent="." unique_id=2091652862 instance=ExtResource("20_ijtdf")]
+position = Vector2(981, 529)
+
+[node name="Lizard3" parent="." unique_id=688427997 instance=ExtResource("20_ijtdf")]
+position = Vector2(1724, 218)
+
+[node name="Lizard4" parent="." unique_id=531036244 instance=ExtResource("20_ijtdf")]
+position = Vector2(2133, 288)
+
+[node name="Lizard5" parent="." unique_id=1910036908 instance=ExtResource("20_ijtdf")]
+position = Vector2(2938, 602)
+
+[node name="Lizard6" parent="." unique_id=841531124 instance=ExtResource("20_ijtdf")]
+position = Vector2(3470, 194)
+
+[node name="Lizard7" parent="." unique_id=780516177 instance=ExtResource("20_ijtdf")]
+position = Vector2(4017, 194)
+
+[node name="Lizard8" parent="." unique_id=459741404 instance=ExtResource("20_ijtdf")]
+position = Vector2(4336, 459)
+
+[node name="Lizard9" parent="." unique_id=240451905 instance=ExtResource("20_ijtdf")]
+position = Vector2(4796, 221)
+
+[node name="Lizard10" parent="." unique_id=1669846317 instance=ExtResource("20_ijtdf")]
+position = Vector2(5179, 599)
+
+[node name="Demon" parent="." unique_id=1291251911 instance=ExtResource("21_ijtdf")]
+position = Vector2(266, 622)
+
+[node name="Demon2" parent="." unique_id=1966473155 instance=ExtResource("21_ijtdf")]
+position = Vector2(626, 623)
+
+[node name="Demon3" parent="." unique_id=425072927 instance=ExtResource("21_ijtdf")]
+position = Vector2(1229, 241)
+
+[node name="Demon4" parent="." unique_id=1367515808 instance=ExtResource("21_ijtdf")]
+position = Vector2(1809, 503)
+
+[node name="Demon5" parent="." unique_id=298019415 instance=ExtResource("21_ijtdf")]
+position = Vector2(2433, 192)
+
+[node name="Demon6" parent="." unique_id=1023696745 instance=ExtResource("21_ijtdf")]
+position = Vector2(2810, 313)
+
+[node name="Demon7" parent="." unique_id=360752384 instance=ExtResource("21_ijtdf")]
+position = Vector2(3645, 286)
+
+[node name="Demon8" parent="." unique_id=247969200 instance=ExtResource("21_ijtdf")]
+position = Vector2(4001, 385)
+
+[node name="Demon9" parent="." unique_id=701287725 instance=ExtResource("21_ijtdf")]
+position = Vector2(4757, 597)
+
+[node name="Demon10" parent="." unique_id=371901685 instance=ExtResource("21_ijtdf")]
+position = Vector2(5053, 504)
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
