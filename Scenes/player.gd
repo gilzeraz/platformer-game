@@ -246,6 +246,7 @@ func _respawn() -> void:
 
 # Clears the save and transitions to the game over scene.
 func _game_over() -> void:
+	hud.stop_timer()  # ← para o cronômetro
 	SaveManager.delete_save()
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 

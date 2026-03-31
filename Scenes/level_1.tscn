@@ -502,7 +502,7 @@ scale = Vector2(1.3421053, 1.3421053)
 texture = ExtResource("20_1f27d")
 
 [node name="Fence8" type="Sprite2D" parent="Fence2" unique_id=1624339967]
-position = Vector2(2819.4512, 125.17648)
+position = Vector2(2828.392, 128.90198)
 scale = Vector2(1.3421053, 1.3421053)
 texture = ExtResource("20_1f27d")
 

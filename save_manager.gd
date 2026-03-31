@@ -7,6 +7,8 @@ extends Node
 
 ## File path used to store the save data.
 const SAVE_PATH: String = "user://save.dat"
+var last_score: int = 0
+var last_time: float = 0.0 
 
 
 ## Saves the current player state to disk.

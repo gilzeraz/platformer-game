@@ -1,20 +1,29 @@
 extends CanvasLayer
-## Game Over screen controller.
-##
-## Displayed when the player runs out of lives.  
-## Provides options to restart the game, return to the main menu,
-## or delete the existing save data.
 
+@onready var score_label: Label = $VBoxContainer2/ScoreContainer/ScoreLabel
+@onready var coin_icon: AnimatedSprite2D = $VBoxContainer2/ScoreContainer/AnimatedSprite2D
+@onready var time_label: Label = $VBoxContainer2/HBoxContainer/TimeLabel
+@onready var clock_icon: AnimatedSprite2D = $VBoxContainer2/HBoxContainer/AnimatedSprite2D
+
+func _ready() -> void:
+	coin_icon.play("idle")
+	clock_icon.play("idle")  # ajuste o nome da animação se for diferente
+	score_label.text = "SCORE " + str(SaveManager.last_score)
+
+	var t: int = int(SaveManager.last_time)
+	var minutes: int = int(t / 60)
+	var seconds: int = t % 60
+	time_label.text = "TIME %02d:%02d" % [minutes, seconds]
 
 func _on_btn_tentar_pressed() -> void:
+	SaveManager.last_score = 0
+	SaveManager.last_time = 0.0
 	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
 
-
 func _on_btn_menu_pressed() -> void:
+	SaveManager.last_score = 0
+	SaveManager.last_time = 0.0
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
-
-# Deletes the current save file and returns to the main menu.
 func _on_btn_deletar_pressed() -> void:
-	SaveManager.delete_save()
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().quit()

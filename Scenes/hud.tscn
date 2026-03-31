@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bdmnblolqr324" path="res://assets/collectibles/Collectibles/coin/coin_w.png" id="2_fccik"]
 [ext_resource type="Texture2D" uid="uid://3k7fdapvii4e" path="res://assets/collectibles/Collectibles/heart/heart_w.png" id="3_bjfho"]
 [ext_resource type="Texture2D" uid="uid://vm6300kl2lbp" path="res://assets/environment/pause.png" id="4_6fbih"]
+[ext_resource type="Texture2D" uid="uid://b4ct28nx8iefr" path="res://assets/environment/Pixelated clocks in a 2x3 grid.png" id="4_36asn"]
 [ext_resource type="AudioStream" uid="uid://d14542lxw0mbh" path="res://assets/sounds/dragon-studio-button-press-382713.mp3" id="5_t1xeu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjfho"]
@@ -85,6 +86,56 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_piegi"]
+atlas = ExtResource("4_36asn")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2avg"]
+atlas = ExtResource("4_36asn")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1a2va"]
+atlas = ExtResource("4_36asn")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssfue"]
+atlas = ExtResource("4_36asn")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bf2m"]
+atlas = ExtResource("4_36asn")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ba8gd"]
+atlas = ExtResource("4_36asn")
+region = Rect2(1024, 512, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_36s6t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_piegi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2avg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1a2va")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssfue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bf2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ba8gd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [node name="HUD" type="CanvasLayer" unique_id=505549929]
 process_mode = 3
 script = ExtResource("1_e0onf")
@@ -125,6 +176,22 @@ layout_mode = 2
 text = "LIVES"
 vertical_alignment = 1
 
+[node name="HBoxContainer3" type="HBoxContainer" parent="." unique_id=51953839]
+offset_left = 379.0
+offset_top = 25.0
+offset_right = 419.0
+offset_bottom = 65.0
+
+[node name="TimeLabel" type="Label" parent="HBoxContainer3" unique_id=1497635445]
+layout_mode = 2
+text = "TIME"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer3" unique_id=552060859]
+position = Vector2(-24, 18)
+scale = Vector2(0.078125, 0.078125)
+sprite_frames = SubResource("SpriteFrames_36s6t")
+animation = &"idle"
+
 [node name="PauseButton" type="TextureButton" parent="." unique_id=1281352042]
 texture_filter = 1
 offset_left = 1078.0
@@ -159,7 +226,7 @@ text = "MENU"
 
 [node name="BtnDeletar" type="Button" parent="PauseMenu/VBoxContainer" unique_id=522478324]
 layout_mode = 2
-text = "DELETE"
+text = "QUIT"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1624064383]
 stream = ExtResource("5_t1xeu")
