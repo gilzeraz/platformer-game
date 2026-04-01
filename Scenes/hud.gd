@@ -73,7 +73,10 @@ func _on_btn_retomar_pressed() -> void:
 func _on_btn_reiniciar_pressed() -> void:
 	_play_click()
 	get_tree().paused = false
-	Transition.change_scene(get_tree().current_scene.scene_file_path)
+	SaveManager.delete_save()
+	elapsed_time = 0.0
+	SaveManager.last_time = 0.0
+	Transition.change_scene("res://scenes/level_1.tscn")
 
 func _on_btn_menu_pressed() -> void:
 	_play_click()
