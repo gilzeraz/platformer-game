@@ -17,6 +17,7 @@ extends CanvasLayer
 var elapsed_time: float = 0.0
 var running: bool = true
 
+
 func _ready() -> void:
 	add_to_group("hud")
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -26,7 +27,8 @@ func _ready() -> void:
 	update_coins(0)
 	update_lives(3)
 	pause_menu.visible = false
-	elapsed_time = SaveManager.last_time  # ← restaura o tempo ao carregar
+	elapsed_time = SaveManager.last_time
+
 
 func _process(delta: float) -> void:
 	if get_tree().paused or not running:
@@ -37,39 +39,53 @@ func _process(delta: float) -> void:
 	var seconds: int = int(elapsed_time) % 60
 	time_label.text = "TIME = %02d:%02d" % [minutes, seconds]
 
-## Stops the timer — called by the player on death.
+
+# Stops the elapsed time timer.
 func stop_timer() -> void:
 	running = false
+
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		_toggle_pause()
+
 
 ## Updates the coin counter displayed on the HUD.
 func update_coins(amount: int) -> void:
 	coins_label.text = "COINS = " + str(amount)
 	SaveManager.last_score = amount
 
+
 ## Updates the lives counter displayed on the HUD.
 func update_lives(amount: int) -> void:
 	lives_label.text = "LIVES = " + str(amount)
 
+
+# Toggles the pause state and pause menu visibility.
 func _toggle_pause() -> void:
 	var paused: bool = not get_tree().paused
 	get_tree().paused = paused
 	pause_menu.visible = paused
 
+
+# Plays a click sound effect.
 func _play_click() -> void:
 	click_sound.play()
 
+
+# Handles pause button press events.
 func _on_pause_button_pressed() -> void:
 	_play_click()
 	_toggle_pause()
 
+
+# Handles resume button press events.
 func _on_btn_retomar_pressed() -> void:
 	_play_click()
 	_toggle_pause()
 
+
+# Restarts the level.
 func _on_btn_reiniciar_pressed() -> void:
 	_play_click()
 	get_tree().paused = false
@@ -78,10 +94,15 @@ func _on_btn_reiniciar_pressed() -> void:
 	SaveManager.last_time = 0.0
 	Transition.change_scene("res://scenes/level_1.tscn")
 
+
+# Returns to the main menu.
 func _on_btn_menu_pressed() -> void:
 	_play_click()
 	get_tree().paused = false
 	Transition.change_scene("res://scenes/main_menu.tscn")
 
+
+# Exits the application.
 func _on_btn_deletar_pressed() -> void:
 	get_tree().quit()
+

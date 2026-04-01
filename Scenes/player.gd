@@ -5,11 +5,6 @@ extends CharacterBody2D
 ## automatic saving, item collection, and a camera with horizontal limits.
 
 
-
-#region Properties
-
-## Constants used for movement and timing.
-#region Constants
 ## Horizontal movement speed in pixels per second.
 const SPEED: float = 250.0
 
@@ -27,9 +22,7 @@ const SAVE_INTERVAL: float = 10.0
 
 ## Time interval between blink frames during invincibility or respawn, in seconds.
 const INTERVAL: float = 0.1
-#endregion
 
-## Runtime state variables.
 var extra_lives: int = 3
 var coins: int = 0
 var is_dead: bool = false
@@ -47,10 +40,7 @@ var camera_fixed_y: float = 0.0
 @onready var respawn_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D4
 @onready var camera: Camera2D = $Camera2D
 
-#endregion
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_to_group("player")
 	spawn_position = position  # posição definida no editor da cena
@@ -68,21 +58,16 @@ func _ready() -> void:
 	camera.limit_bottom = 2000
 
 
-
-# Loads saved player data if present.
+# Loads player state from the save file.
 func _load_save() -> void:
 	var data: Dictionary = SaveManager.load_data()
 
-	if data.is_empty():
-		return
+	if data.is_empty(): return
 
-	# Restaura apenas vidas e moedas — posição vem do editor da cena
 	extra_lives = data["lives"]
 	coins = data["coins"]
 
 
-
-# Physics processing entry point. Handles movement and camera updates.
 func _physics_process(delta: float) -> void:
 	if is_dead: return
 
@@ -98,8 +83,7 @@ func _physics_process(delta: float) -> void:
 	_update_camera()
 
 
-
-# Updates the camera horizontal position while keeping a fixed vertical offset.
+# Constrains camera position to the defined limits.
 func _update_camera() -> void:
 	var target_x: float = clamp(
 		global_position.x,
@@ -110,8 +94,7 @@ func _update_camera() -> void:
 	camera.global_position = Vector2(target_x, camera_fixed_y)
 
 
-
-# Reads input and moves the character horizontally.
+# Handles horizontal movement based on input.
 func _handle_movement() -> void:
 	var direction: float = Input.get_axis("move_left", "move_right")
 
@@ -123,8 +106,7 @@ func _handle_movement() -> void:
 		animated_sprite.flip_h = true
 
 
-
-# Handles jump requests, including multiple jumps.
+# Handles jumping with double jump capability.
 func _handle_jump() -> void:
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor() or jump_count < MAX_JUMPS:
@@ -136,8 +118,7 @@ func _handle_jump() -> void:
 		velocity.y *= 0.5
 
 
-
-# Applies gravity when airborne and resets jump count on floor contact.
+# Applies gravity to the player.
 func _apply_gravity(delta: float) -> void:
 	if is_on_floor():
 		jump_count = 0
@@ -145,8 +126,7 @@ func _apply_gravity(delta: float) -> void:
 		velocity.y += GRAVITY * delta
 
 
-
-# Updates the animated sprite based on movement state.
+# Updates the sprite animation based on movement state.
 func _update_animation(direction: float) -> void:
 	if not is_on_floor():
 		animated_sprite.play("jump")
@@ -160,8 +140,7 @@ func _update_animation(direction: float) -> void:
 		walking_sound.stop()
 
 
-
-# Called when the sprite frame changes to trigger footstep sound.
+# Plays footstep sounds during walk animation.
 func _on_frame_changed() -> void:
 	if animated_sprite.animation != "walk": return
 
@@ -171,8 +150,7 @@ func _on_frame_changed() -> void:
 		walking_sound.play()
 
 
-
-# Manages periodic autosave timing and triggers saves.
+# Automatically saves the player state at regular intervals.
 func _handle_autosave(delta: float) -> void:
 	save_timer += delta
 
@@ -183,8 +161,7 @@ func _handle_autosave(delta: float) -> void:
 	SaveManager.save(self)
 
 
-
-## Applies damage to the player, reducing lives and granting temporary invincibility.
+# Damages the player and triggers invincibility or death.
 func take_damage() -> void:
 	if is_dead or is_invincible: return
 
@@ -204,11 +181,9 @@ func take_damage() -> void:
 	is_invincible = false
 
 
-
-## Starts the death sequence and handles respawn or game over.
+# Handles player death sequence.
 func die() -> void:
-	if is_dead:
-		return
+	if is_dead: return
 
 	is_dead = true
 	velocity = Vector2.ZERO
@@ -230,8 +205,7 @@ func die() -> void:
 		_game_over()
 
 
-
-# Respawns the player at the saved spawn position.
+# Respawns the player at the spawn position.
 func _respawn() -> void:
 	position = spawn_position
 	velocity = Vector2.ZERO
@@ -243,16 +217,18 @@ func _respawn() -> void:
 	await _blink(1.0)
 
 
-
-# Clears the save and transitions to the game over scene.
+# Transitions to the game over screen.
 func _game_over() -> void:
-	hud.stop_timer()  # ← para o cronômetro
+	hud.stop_timer()
+	var score: int = SaveManager.last_score
+	var time: float = SaveManager.last_time
 	SaveManager.delete_save()
+	SaveManager.last_score = score
+	SaveManager.last_time = time
 	Transition.change_scene("res://scenes/game_over.tscn")
 
 
-
-# Blinks the player sprite for the specified duration.
+# Creates a blinking effect by toggling sprite visibility.
 func _blink(duration: float) -> void:
 	var elapsed: float = 0.0
 
@@ -264,8 +240,7 @@ func _blink(duration: float) -> void:
 	animated_sprite.visible = true
 
 
-
-## Processes the collection of an item and updates player resources accordingly.
+# Collects a collectible item.
 func collect(data: CollectibleData) -> void:
 	if data.is_extra_life:
 		extra_lives += 1
@@ -278,8 +253,7 @@ func collect(data: CollectibleData) -> void:
 	SaveManager.save(self)
 
 
-
-## Adds coins to the player score and updates the HUD.
+# Adds coins to the player's score.
 func add_score(amount: int) -> void:
 	coins += amount
 	hud.update_coins(coins)
@@ -287,25 +261,21 @@ func add_score(amount: int) -> void:
 	SaveManager.save(self)
 
 
-
-# Handles unhandled input such as pause toggles.
+# Handles pause input events.
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		hud._toggle_pause()
 
 
-
-# Called when a kill zone body enters; forwards die to bodies that support it.
+# Handles collision with kill zones.
 func _on_killzone_body_entered(body: Node2D) -> void:
 	if body.has_method("die"):
 		body.die()
 
 
-
-# Called when the feet area enters another area; used for stomp mechanics.
+# Handles jumping on enemy heads.
 func _on_feet_area_entered(area: Area2D) -> void:
-	if area.name != "Jumpbox":
-		return
+	if area.name != "Jumpbox": return
 
 	velocity.y = JUMP_FORCE
 

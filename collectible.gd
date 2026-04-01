@@ -9,19 +9,17 @@ extends Area2D
 ## Resource containing the collectible configuration and behavior data.
 @export var data: CollectibleData
 
-
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @onready var coin_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if data:
 		sprite.sprite_frames = data.frames
 		sprite.play("idle")
 
 
-# Called when a body enters the collectible area.
+# Handles player collision and collects the item.
 func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("collect"):
 		body.collect(data)

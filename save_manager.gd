@@ -7,11 +7,12 @@ extends Node
 
 ## File path used to store the save data.
 const SAVE_PATH: String = "user://save.dat"
+
 var last_score: int = 0
-var last_time: float = 0.0 
+var last_time: float = 0.0
 
 
-## Saves the current player state to disk.
+# Saves the current player state to disk.
 func save(player: Node) -> void:
 	var data: Dictionary = {
 		"lives": player.extra_lives,
@@ -26,7 +27,7 @@ func save(player: Node) -> void:
 	file.close()
 
 
-## Loads save data from disk and returns it as a Dictionary.
+# Loads save data from disk and returns it as a Dictionary.
 func load_data() -> Dictionary:
 	if not FileAccess.file_exists(SAVE_PATH): return {}
 
@@ -37,11 +38,12 @@ func load_data() -> Dictionary:
 	return data
 
 
-## Returns [code]true[/code] if a save file exists.
-func has_save() -> bool: return FileAccess.file_exists(SAVE_PATH)
+# Returns [code]true[/code] if a save file exists.
+func has_save() -> bool:
+	return FileAccess.file_exists(SAVE_PATH)
 
 
-## Deletes the save file if it exists.
+# Deletes the save file if it exists.
 func delete_save() -> void:
 	if has_save():
 		DirAccess.remove_absolute(SAVE_PATH)
