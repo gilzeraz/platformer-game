@@ -177,17 +177,17 @@ text = "LIVES"
 vertical_alignment = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="." unique_id=51953839]
-offset_left = 379.0
-offset_top = 25.0
-offset_right = 419.0
-offset_bottom = 65.0
+offset_left = 393.0
+offset_top = 26.0
+offset_right = 433.0
+offset_bottom = 66.0
 
 [node name="TimeLabel" type="Label" parent="HBoxContainer3" unique_id=1497635445]
 layout_mode = 2
 text = "TIME"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer3" unique_id=552060859]
-position = Vector2(-24, 18)
+position = Vector2(-24.00003, 17)
 scale = Vector2(0.078125, 0.078125)
 sprite_frames = SubResource("SpriteFrames_36s6t")
 animation = &"idle"

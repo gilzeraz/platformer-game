@@ -248,7 +248,7 @@ func _respawn() -> void:
 func _game_over() -> void:
 	hud.stop_timer()  # ← para o cronômetro
 	SaveManager.delete_save()
-	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+	Transition.change_scene("res://scenes/game_over.tscn")
 
 
 

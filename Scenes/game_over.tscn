@@ -118,6 +118,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer2/ScoreContainer" unique_id=1208480630]
+texture_filter = 1
 position = Vector2(-16, 11)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_3817r")

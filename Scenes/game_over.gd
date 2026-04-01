@@ -18,12 +18,12 @@ func _ready() -> void:
 func _on_btn_tentar_pressed() -> void:
 	SaveManager.last_score = 0
 	SaveManager.last_time = 0.0
-	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
+	Transition.change_scene("res://scenes/level_1.tscn")
 
 func _on_btn_menu_pressed() -> void:
 	SaveManager.last_score = 0
 	SaveManager.last_time = 0.0
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	Transition.change_scene("res://scenes/main_menu.tscn")
 
 func _on_btn_deletar_pressed() -> void:
 	get_tree().quit()

@@ -18,6 +18,7 @@ var elapsed_time: float = 0.0
 var running: bool = true
 
 func _ready() -> void:
+	add_to_group("hud")
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	coin_icon.play("idle")
 	heart_icon.play("idle")
@@ -25,6 +26,7 @@ func _ready() -> void:
 	update_coins(0)
 	update_lives(3)
 	pause_menu.visible = false
+	elapsed_time = SaveManager.last_time  # ← restaura o tempo ao carregar
 
 func _process(delta: float) -> void:
 	if get_tree().paused or not running:
@@ -71,12 +73,12 @@ func _on_btn_retomar_pressed() -> void:
 func _on_btn_reiniciar_pressed() -> void:
 	_play_click()
 	get_tree().paused = false
-	get_tree().reload_current_scene()
+	Transition.change_scene(get_tree().current_scene.scene_file_path)
 
 func _on_btn_menu_pressed() -> void:
 	_play_click()
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	Transition.change_scene("res://scenes/main_menu.tscn")
 
 func _on_btn_deletar_pressed() -> void:
 	get_tree().quit()

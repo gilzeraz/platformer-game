@@ -15,6 +15,7 @@ const FONT: FontFile = preload("res://assets/environment/monogram.ttf")
 func _ready() -> void:
 	# Disable the continue button if no save file exists.
 	continue_button.disabled = not SaveManager.has_save()
+	Transition.fade_in_only()
 
 	for node: Node in $VBoxContainer.get_children():
 		if node is Button:
@@ -32,13 +33,13 @@ func _ready() -> void:
 # Handles the new game button press.
 func _on_newgame_pressed() -> void:
 	SaveManager.delete_save()
-	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
+	Transition.change_scene("res://scenes/level_1.tscn")
 
 
 func _on_continue_pressed() -> void:
 	# Handles the continue button press.
 	var data: Dictionary = SaveManager.load_data()
-	get_tree().change_scene_to_file(data["scene"])
+	Transition.change_scene(data["scene"])
 
 
 func _on_exit_pressed() -> void:

@@ -1,0 +1,228 @@
+[gd_scene format=3 uid="uid://bd2t3mxd4kwi3"]
+
+[ext_resource type="Texture2D" uid="uid://bufqwyyqfom4s" path="res://assets/environment/6731373a-2f09-4b78-ac47-ab25787301a6.png" id="1_1fp7o"]
+[ext_resource type="Script" uid="uid://df0xogcna0k64" path="res://Scenes/victory.gd" id="1_f34f5"]
+[ext_resource type="Texture2D" uid="uid://1dd6fqfgt7cq" path="res://assets/player/char_blue.png" id="2_7yj50"]
+[ext_resource type="Texture2D" uid="uid://y1pd88d64gh8" path="res://assets/collectibles/Collectibles/coin/coin_b.png" id="3_slr2v"]
+[ext_resource type="Texture2D" uid="uid://b4ct28nx8iefr" path="res://assets/environment/Pixelated clocks in a 2x3 grid.png" id="4_f34f5"]
+[ext_resource type="AudioStream" uid="uid://dc1b3pbn7noxa" path="res://assets/sounds/xDeviruchi - Take some rest and eat some food!.wav" id="6_xy5eq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xy5eq"]
+atlas = ExtResource("2_7yj50")
+region = Rect2(0, 56, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbb2g"]
+atlas = ExtResource("2_7yj50")
+region = Rect2(56, 56, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dl4n"]
+atlas = ExtResource("2_7yj50")
+region = Rect2(112, 56, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjssh"]
+atlas = ExtResource("2_7yj50")
+region = Rect2(168, 56, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxnk1"]
+atlas = ExtResource("2_7yj50")
+region = Rect2(224, 56, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpxkf"]
+atlas = ExtResource("2_7yj50")
+region = Rect2(280, 56, 56, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oogxl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xy5eq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbb2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dl4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjssh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxnk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpxkf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14u15"]
+atlas = ExtResource("3_slr2v")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3ryr"]
+atlas = ExtResource("3_slr2v")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjluv"]
+atlas = ExtResource("3_slr2v")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjtdd"]
+atlas = ExtResource("3_slr2v")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uylih"]
+atlas = ExtResource("3_slr2v")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nfg8y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14u15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3ryr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjluv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjtdd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uylih")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3817r"]
+atlas = ExtResource("4_f34f5")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mitgx"]
+atlas = ExtResource("4_f34f5")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs2es"]
+atlas = ExtResource("4_f34f5")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asocn"]
+atlas = ExtResource("4_f34f5")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61f6c"]
+atlas = ExtResource("4_f34f5")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqply"]
+atlas = ExtResource("4_f34f5")
+region = Rect2(1024, 512, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5v66y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3817r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mitgx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs2es")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asocn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61f6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqply")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="Victory" type="CanvasLayer" unique_id=2656953]
+script = ExtResource("1_f34f5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2110222927]
+position = Vector2(576, 324)
+scale = Vector2(0.75, 0.6328125)
+texture = ExtResource("1_1fp7o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1759859885]
+texture_filter = 1
+position = Vector2(951.99994, 391.99997)
+scale = Vector2(5.892858, 5.892858)
+sprite_frames = SubResource("SpriteFrames_oogxl")
+animation = &"idle"
+frame = 4
+frame_progress = 0.5831488
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1942873102]
+offset_left = 557.0
+offset_top = 217.0
+offset_right = 608.0
+offset_bottom = 267.0
+
+[node name="ScoreContainer" type="HBoxContainer" parent="VBoxContainer2" unique_id=1834184892]
+layout_mode = 2
+alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer2/ScoreContainer" unique_id=1364808384]
+texture_filter = 1
+position = Vector2(-16, 11)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_nfg8y")
+animation = &"idle"
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer2/ScoreContainer" unique_id=1495725399]
+layout_mode = 2
+horizontal_alignment = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2" unique_id=1427955376]
+layout_mode = 2
+
+[node name="TimeLabel" type="Label" parent="VBoxContainer2/HBoxContainer" unique_id=814020794]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer2/HBoxContainer" unique_id=1790840296]
+texture_filter = 1
+position = Vector2(-16, 11)
+scale = Vector2(0.051432285, 0.051432278)
+sprite_frames = SubResource("SpriteFrames_5v66y")
+animation = &"idle"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1578536710]
+offset_left = 480.0
+offset_top = 296.0
+offset_right = 688.0
+offset_bottom = 400.0
+
+[node name="BtnTentar" type="Button" parent="VBoxContainer" unique_id=880059402]
+layout_mode = 2
+text = "RESTART"
+
+[node name="BtnMenu" type="Button" parent="VBoxContainer" unique_id=1480689687]
+layout_mode = 2
+text = "MENU"
+
+[node name="BtnDeletar" type="Button" parent="VBoxContainer" unique_id=1849426468]
+layout_mode = 2
+text = "QUIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=502055985]
+stream = ExtResource("6_xy5eq")
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/BtnTentar" to="." method="_on_btn_tentar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtnMenu" to="." method="_on_btn_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtnDeletar" to="." method="_on_btn_deletar_pressed"]
