@@ -24,7 +24,9 @@ const SAVE_INTERVAL: float = 10.0
 ## Time interval between blink frames during invincibility or respawn, in seconds.
 const INTERVAL: float = 0.1
 
+## Path to the game over scene displayed when the player loses all lives.
 const GAME_OVER_SCENE: String = "res://scenes/game_over/game_over.tscn"
+
 
 var extra_lives: int = 3
 var coins: int = 0

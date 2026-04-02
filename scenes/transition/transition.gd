@@ -4,6 +4,7 @@ extends CanvasLayer
 ## Handles smooth transitions between scenes with fade animations,
 ## and provides utilities for fade-only effects at game start.
 
+
 ## Duration of fade animation in seconds.
 const FADE_DURATION: float = 0.5
 

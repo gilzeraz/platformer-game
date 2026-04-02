@@ -6,6 +6,8 @@ extends Control
 ## and processes menu actions such as starting a new game, continuing from a save,
 ## or exiting the application.
 
+
+## Path to level 1 scene loaded when starting a new game.
 const LEVEL_1_SCENE: String = "res://scenes/levels/level_1.tscn"
 
 @onready var player_image: AnimatedSprite2D = $AnimatedSprite2D

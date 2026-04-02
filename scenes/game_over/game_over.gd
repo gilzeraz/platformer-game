@@ -5,7 +5,11 @@ extends CanvasLayer
 ## Shows the player's score and time upon game over, and provides buttons to restart,
 ## return to menu, or exit the application.
 
+
+## Path to level 1 scene loaded when restarting the game.
 const LEVEL_1_SCENE: String = "res://scenes/levels/level_1.tscn"
+
+## Path to main menu scene loaded when returning to menu.
 const MAIN_MENU_SCENE: String = "res://scenes//main_menu/main_menu.tscn"
 
 

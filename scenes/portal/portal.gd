@@ -6,6 +6,7 @@ extends Area2D
 ## that stops the HUD timer before transitioning.
 
 
+## Path to level 2 scene loaded when the player enters the portal.
 const LEVEL_2_SCENE: String = "res://scenes/levels/level_2.tscn"
 
 ## Path to the next scene to load.

@@ -5,7 +5,11 @@ extends CanvasLayer
 ## Displays coins and lives counters, animates HUD icons, and manages the
 ## pause menu interface including pause toggling and menu navigation.
 
+
+## Path to level 1 scene loaded when restarting the game from pause menu.
 const LEVEL_1_SCENE: String = "res://scenes/levels/level_1.tscn"
+
+## Path to main menu scene loaded when returning to menu from pause menu.
 const MAIN_MENU_SCENE: String = "res://scenes/main_menu/main_menu.tscn"
 
 var elapsed_time: float = 0.0
