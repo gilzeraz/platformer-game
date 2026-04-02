@@ -105,4 +105,3 @@ func _on_btn_menu_pressed() -> void:
 # Exits the application.
 func _on_btn_deletar_pressed() -> void:
 	get_tree().quit()
-

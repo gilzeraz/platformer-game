@@ -46,4 +46,3 @@ func _on_continue_pressed() -> void:
 # Exits the application.
 func _on_exit_pressed() -> void:
 	get_tree().quit()
-

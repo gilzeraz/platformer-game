@@ -44,4 +44,3 @@ func fade_in_only() -> void:
 	overlay.modulate.a = 1.0
 	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
 	await _fade_in()
-
