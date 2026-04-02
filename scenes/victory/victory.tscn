@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bd2t3mxd4kwi3"]
 
-[ext_resource type="Texture2D" uid="uid://bufqwyyqfom4s" path="res://assets/environment/6731373a-2f09-4b78-ac47-ab25787301a6.png" id="1_1fp7o"]
-[ext_resource type="Script" uid="uid://df0xogcna0k64" path="res://Scenes/victory.gd" id="1_f34f5"]
+[ext_resource type="Texture2D" uid="uid://djqu0jan0wmmn" path="res://assets/environment/victory_bg.png" id="1_1fp7o"]
+[ext_resource type="Script" uid="uid://df0xogcna0k64" path="res://scenes/victory/victory.gd" id="1_f34f5"]
 [ext_resource type="Texture2D" uid="uid://1dd6fqfgt7cq" path="res://assets/player/char_blue.png" id="2_7yj50"]
 [ext_resource type="Texture2D" uid="uid://y1pd88d64gh8" path="res://assets/collectibles/Collectibles/coin/coin_b.png" id="3_slr2v"]
-[ext_resource type="Texture2D" uid="uid://b4ct28nx8iefr" path="res://assets/environment/Pixelated clocks in a 2x3 grid.png" id="4_f34f5"]
-[ext_resource type="AudioStream" uid="uid://dc1b3pbn7noxa" path="res://assets/sounds/xDeviruchi - Take some rest and eat some food!.wav" id="6_xy5eq"]
+[ext_resource type="Texture2D" uid="uid://cwawfh55ikjgd" path="res://assets/environment/pixel_clocks.png" id="4_f34f5"]
+[ext_resource type="AudioStream" uid="uid://b8etmgump4yfr" path="res://assets/sounds/take_some_rest.wav" id="6_xy5eq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xy5eq"]
 atlas = ExtResource("2_7yj50")

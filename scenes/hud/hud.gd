@@ -1,8 +1,15 @@
+class_name HUD
 extends CanvasLayer
 ## Heads-up display controller responsible for presenting player information.
 ##
 ## Displays coins and lives counters, animates HUD icons, and manages the
 ## pause menu interface including pause toggling and menu navigation.
+
+const LEVEL_1_SCENE: String = "res://scenes/levels/level_1.tscn"
+const MAIN_MENU_SCENE: String = "res://scenes/main_menu/main_menu.tscn"
+
+var elapsed_time: float = 0.0
+var running: bool = true
 
 @onready var coins_label: Label = $HBoxContainer/CoinsLabel
 @onready var lives_label: Label = $HBoxContainer2/CoinsLabel
@@ -13,9 +20,6 @@ extends CanvasLayer
 @onready var click_sound: AudioStreamPlayer = $AudioStreamPlayer
 @onready var time_label: Label = $HBoxContainer3/TimeLabel
 @onready var clock_icon: AnimatedSprite2D = $HBoxContainer3/AnimatedSprite2D
-
-var elapsed_time: float = 0.0
-var running: bool = true
 
 
 func _ready() -> void:
@@ -31,8 +35,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if get_tree().paused or not running:
-		return
+	if get_tree().paused or not running: return
 	elapsed_time += delta
 	SaveManager.last_time = elapsed_time
 	var minutes: int = int(elapsed_time / 60)
@@ -92,14 +95,14 @@ func _on_btn_reiniciar_pressed() -> void:
 	SaveManager.delete_save()
 	elapsed_time = 0.0
 	SaveManager.last_time = 0.0
-	Transition.change_scene("res://scenes/level_1.tscn")
+	Transition.change_scene(LEVEL_1_SCENE)
 
 
 # Returns to the main menu.
 func _on_btn_menu_pressed() -> void:
 	_play_click()
 	get_tree().paused = false
-	Transition.change_scene("res://scenes/main_menu.tscn")
+	Transition.change_scene(MAIN_MENU_SCENE)
 
 
 # Exits the application.

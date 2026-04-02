@@ -12,19 +12,14 @@ const GRAVITY: float = 900.0
 
 ## Horizontal patrol movement speed in pixels per second.
 @export var speed: float = 60.0
-
 ## Horizontal chase movement speed when pursuing the player in pixels per second.
 @export var chase_speed: float = 120.0
-
 ## Maximum distance from start position for patrol movement in pixels.
 @export var patrol_distance: float = 100.0
-
 ## Maximum distance for attack triggering in pixels.
 @export var attack_range: float = 40.0
-
 ## Time between consecutive attacks in seconds.
 @export var attack_cooldown: float = 1.0
-
 ## Score value awarded to the player when this enemy is defeated.
 @export var score_value: int = 5
 

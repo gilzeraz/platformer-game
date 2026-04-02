@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bmncrprtcr0i"]
 
-[ext_resource type="Script" uid="uid://upfy4861neh8" path="res://Scenes/hud.gd" id="1_e0onf"]
+[ext_resource type="Script" uid="uid://upfy4861neh8" path="res://scenes/hud/hud.gd" id="1_e0onf"]
 [ext_resource type="Texture2D" uid="uid://bdmnblolqr324" path="res://assets/collectibles/Collectibles/coin/coin_w.png" id="2_fccik"]
 [ext_resource type="Texture2D" uid="uid://3k7fdapvii4e" path="res://assets/collectibles/Collectibles/heart/heart_w.png" id="3_bjfho"]
 [ext_resource type="Texture2D" uid="uid://vm6300kl2lbp" path="res://assets/environment/pause.png" id="4_6fbih"]
-[ext_resource type="Texture2D" uid="uid://b4ct28nx8iefr" path="res://assets/environment/Pixelated clocks in a 2x3 grid.png" id="4_36asn"]
+[ext_resource type="Texture2D" uid="uid://cwawfh55ikjgd" path="res://assets/environment/pixel_clocks.png" id="4_36asn"]
 [ext_resource type="AudioStream" uid="uid://d14542lxw0mbh" path="res://assets/sounds/dragon-studio-button-press-382713.mp3" id="5_t1xeu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjfho"]

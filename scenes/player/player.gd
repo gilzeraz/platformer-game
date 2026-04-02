@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 ## Main controller for the player character.
 ##
@@ -23,6 +24,8 @@ const SAVE_INTERVAL: float = 10.0
 ## Time interval between blink frames during invincibility or respawn, in seconds.
 const INTERVAL: float = 0.1
 
+const GAME_OVER_SCENE: String = "res://scenes/game_over/game_over.tscn"
+
 var extra_lives: int = 3
 var coins: int = 0
 var is_dead: bool = false
@@ -43,7 +46,7 @@ var camera_fixed_y: float = 0.0
 
 func _ready() -> void:
 	add_to_group("player")
-	spawn_position = position  # posição definida no editor da cena
+	spawn_position = position
 	_load_save()
 
 	hud.update_coins(coins)
@@ -225,7 +228,7 @@ func _game_over() -> void:
 	SaveManager.delete_save()
 	SaveManager.last_score = score
 	SaveManager.last_time = time
-	Transition.change_scene("res://scenes/game_over.tscn")
+	Transition.change_scene(GAME_OVER_SCENE)
 
 
 # Creates a blinking effect by toggling sprite visibility.

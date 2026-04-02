@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bqiiilmbyg6af"]
 
-[ext_resource type="Script" uid="uid://chh0bqosc0v5r" path="res://Scenes/main_menu.gd" id="1_28flt"]
-[ext_resource type="Texture2D" uid="uid://t81xxscgytq7" path="res://assets/environment/bg (1).png" id="2_48xlc"]
-[ext_resource type="AudioStream" uid="uid://brdfwtjo2cw7f" path="res://assets/sounds/xDeviruchi - Title Theme .wav" id="2_ce3w2"]
+[ext_resource type="Script" uid="uid://chh0bqosc0v5r" path="res://scenes/main_menu/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://c3d2i6b0eg310" path="res://assets/environment/main_bg.png" id="2_48xlc"]
+[ext_resource type="AudioStream" uid="uid://n7bwlgbtcmjs" path="res://assets/sounds/title_theme.wav" id="2_ce3w2"]
 [ext_resource type="Texture2D" uid="uid://1dd6fqfgt7cq" path="res://assets/player/char_blue.png" id="4_ce3w2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n45e2"]

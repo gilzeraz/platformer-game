@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hhy8wkhrymvp"
-path="res://.godot/imported/folha-de-sprite-de-animacao-de-tempo-de-icones-de-jogo-de-relogio.png-2109c6b91fe47567da44df522bcb3bfe.ctex"
+uid="uid://c3d2i6b0eg310"
+path="res://.godot/imported/main_bg.png-dc696b8fdd62df5c4996b26aed28c001.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/folha-de-sprite-de-animacao-de-tempo-de-icones-de-jogo-de-relogio.png"
-dest_files=["res://.godot/imported/folha-de-sprite-de-animacao-de-tempo-de-icones-de-jogo-de-relogio.png-2109c6b91fe47567da44df522bcb3bfe.ctex"]
+source_file="res://assets/environment/main_bg.png"
+dest_files=["res://.godot/imported/main_bg.png-dc696b8fdd62df5c4996b26aed28c001.ctex"]
 
 [params]
 
