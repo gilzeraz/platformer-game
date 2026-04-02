@@ -132,16 +132,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i238n"]
-size = Vector2(20, 39)
+size = Vector2(33, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ds5h"]
 size = Vector2(233, 118.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ywbj"]
-size = Vector2(22, 42.5)
+size = Vector2(85, 77)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clats"]
-size = Vector2(20, 2)
+size = Vector2(40.5, 4)
 
 [node name="BaseEnemy" type="CharacterBody2D" unique_id=932756905]
 script = ExtResource("1_clats")
@@ -170,7 +170,7 @@ debug_color = Color(0, 0.6, 0.69803923, 0)
 position = Vector2(0, 5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1999921654]
-position = Vector2(0, -29.5)
+position = Vector2(11, -29.5)
 shape = SubResource("RectangleShape2D_6ywbj")
 debug_color = Color(0, 0.6, 0.69803923, 0)
 
@@ -185,5 +185,4 @@ shape = SubResource("RectangleShape2D_clats")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=41485229]
 stream = ExtResource("19_6ywbj")
 
-[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

@@ -1,0 +1,114 @@
+class_name HUD
+extends CanvasLayer
+## Heads-up display controller responsible for presenting player information.
+##
+## Displays coins and lives counters, animates HUD icons, and manages the
+## pause menu interface including pause toggling and menu navigation.
+
+
+## Path to level 1 scene loaded when restarting the game from pause menu.
+const LEVEL_1_SCENE: String = "res://scenes/levels/level_1.tscn"
+
+## Path to main menu scene loaded when returning to menu from pause menu.
+const MAIN_MENU_SCENE: String = "res://scenes/main_menu/main_menu.tscn"
+
+var elapsed_time: float = 0.0
+var running: bool = true
+
+@onready var coins_label: Label = $HBoxContainer/CoinsLabel
+@onready var lives_label: Label = $HBoxContainer2/CoinsLabel
+@onready var coin_icon: AnimatedSprite2D = $HBoxContainer/CoinIcon
+@onready var heart_icon: AnimatedSprite2D = $HBoxContainer2/HeartIcon
+@onready var pause_menu: CanvasLayer = $PauseMenu
+@onready var pause_button: TextureButton = $PauseButton
+@onready var click_sound: AudioStreamPlayer = $AudioStreamPlayer
+@onready var time_label: Label = $HBoxContainer3/TimeLabel
+@onready var clock_icon: AnimatedSprite2D = $HBoxContainer3/AnimatedSprite2D
+
+
+func _ready() -> void:
+	add_to_group("hud")
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	coin_icon.play("idle")
+	heart_icon.play("idle")
+	clock_icon.play("idle")
+	update_coins(0)
+	update_lives(3)
+	pause_menu.visible = false
+	elapsed_time = SaveManager.last_time
+
+
+func _process(delta: float) -> void:
+	if get_tree().paused or not running: return
+	elapsed_time += delta
+	SaveManager.last_time = elapsed_time
+	var minutes: int = int(elapsed_time / 60)
+	var seconds: int = int(elapsed_time) % 60
+	time_label.text = "TIME = %02d:%02d" % [minutes, seconds]
+
+
+# Stops the elapsed time timer.
+func stop_timer() -> void:
+	running = false
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		_toggle_pause()
+
+
+## Updates the coin counter displayed on the HUD.
+func update_coins(amount: int) -> void:
+	coins_label.text = "COINS = " + str(amount)
+	SaveManager.last_score = amount
+
+
+## Updates the lives counter displayed on the HUD.
+func update_lives(amount: int) -> void:
+	lives_label.text = "LIVES = " + str(amount)
+
+
+# Toggles the pause state and pause menu visibility.
+func _toggle_pause() -> void:
+	var paused: bool = not get_tree().paused
+	get_tree().paused = paused
+	pause_menu.visible = paused
+
+
+# Plays a click sound effect.
+func _play_click() -> void:
+	click_sound.play()
+
+
+# Handles pause button press events.
+func _on_pause_button_pressed() -> void:
+	_play_click()
+	_toggle_pause()
+
+
+# Handles resume button press events.
+func _on_btn_retomar_pressed() -> void:
+	_play_click()
+	_toggle_pause()
+
+
+# Restarts the level.
+func _on_btn_reiniciar_pressed() -> void:
+	_play_click()
+	get_tree().paused = false
+	SaveManager.delete_save()
+	elapsed_time = 0.0
+	SaveManager.last_time = 0.0
+	Transition.change_scene(LEVEL_1_SCENE)
+
+
+# Returns to the main menu.
+func _on_btn_menu_pressed() -> void:
+	_play_click()
+	get_tree().paused = false
+	Transition.change_scene(MAIN_MENU_SCENE)
+
+
+# Exits the application.
+func _on_btn_deletar_pressed() -> void:
+	get_tree().quit()

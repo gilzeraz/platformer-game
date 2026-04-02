@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://cwiocox42efh1"]
+
+[ext_resource type="Script" uid="uid://c1em5chpnoh8" path="res://scenes/game_over/game_over.gd" id="1_ojehl"]
+[ext_resource type="Texture2D" uid="uid://bu8yshjqjvffp" path="res://assets/environment/game_over_bg.jpg" id="2_8fo1c"]
+[ext_resource type="AudioStream" uid="uid://cx775w1wifvag" path="res://assets/sounds/prepare_for_battle.wav" id="3_ek8ke"]
+[ext_resource type="Texture2D" uid="uid://y1pd88d64gh8" path="res://assets/collectibles/Collectibles/coin/coin_b.png" id="3_eoghk"]
+[ext_resource type="Texture2D" uid="uid://cwawfh55ikjgd" path="res://assets/environment/pixel_clocks.png" id="4_14u15"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14u15"]
+atlas = ExtResource("3_eoghk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3ryr"]
+atlas = ExtResource("3_eoghk")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjluv"]
+atlas = ExtResource("3_eoghk")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjtdd"]
+atlas = ExtResource("3_eoghk")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uylih"]
+atlas = ExtResource("3_eoghk")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3817r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14u15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3ryr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjluv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjtdd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uylih")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3817r"]
+atlas = ExtResource("4_14u15")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mitgx"]
+atlas = ExtResource("4_14u15")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs2es"]
+atlas = ExtResource("4_14u15")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asocn"]
+atlas = ExtResource("4_14u15")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61f6c"]
+atlas = ExtResource("4_14u15")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqply"]
+atlas = ExtResource("4_14u15")
+region = Rect2(1024, 512, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ewkf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3817r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mitgx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs2es")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asocn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61f6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqply")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="GameOver" type="CanvasLayer" unique_id=71681856]
+script = ExtResource("1_ojehl")
+
+[node name="Gameover" type="Sprite2D" parent="." unique_id=1922869247]
+position = Vector2(576, 324)
+scale = Vector2(0.9113924, 0.76959616)
+texture = ExtResource("2_8fo1c")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=35828400]
+offset_left = 557.0
+offset_top = 203.0
+offset_right = 608.0
+offset_bottom = 253.0
+
+[node name="ScoreContainer" type="HBoxContainer" parent="VBoxContainer2" unique_id=308057500]
+layout_mode = 2
+alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer2/ScoreContainer" unique_id=1208480630]
+texture_filter = 1
+position = Vector2(-16, 11)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_3817r")
+animation = &"idle"
+frame = 4
+frame_progress = 1.0
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer2/ScoreContainer" unique_id=1706628878]
+layout_mode = 2
+horizontal_alignment = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2" unique_id=41935042]
+layout_mode = 2
+
+[node name="TimeLabel" type="Label" parent="VBoxContainer2/HBoxContainer" unique_id=1616129505]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer2/HBoxContainer" unique_id=579395375]
+texture_filter = 1
+position = Vector2(-16, 11)
+scale = Vector2(0.051432285, 0.051432278)
+sprite_frames = SubResource("SpriteFrames_6ewkf")
+animation = &"idle"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1693098564]
+offset_left = 480.0
+offset_top = 296.0
+offset_right = 688.0
+offset_bottom = 400.0
+
+[node name="BtnTentar" type="Button" parent="VBoxContainer" unique_id=1905616280]
+layout_mode = 2
+text = "RESTART"
+
+[node name="BtnMenu" type="Button" parent="VBoxContainer" unique_id=1312632629]
+layout_mode = 2
+text = "MENU"
+
+[node name="BtnDeletar" type="Button" parent="VBoxContainer" unique_id=575655700]
+layout_mode = 2
+text = "QUIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1020953208]
+stream = ExtResource("3_ek8ke")
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/BtnTentar" to="." method="_on_btn_tentar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtnMenu" to="." method="_on_btn_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtnDeletar" to="." method="_on_btn_deletar_pressed"]
