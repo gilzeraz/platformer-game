@@ -1440,7 +1440,7 @@ attack_cooldown = 0.5
 
 [node name="Area2D" parent="." unique_id=1698659019 instance=ExtResource("22_c5xoi")]
 position = Vector2(5323, 536)
-next_scene = "res://scenes/victory.tscn"
+next_scene = "res://scenes/victory/victory.tscn"
 is_final_portal = true
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]

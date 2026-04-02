@@ -1,4 +1,3 @@
-class_name Transition
 extends CanvasLayer
 ## Scene transition controller that manages fade in/out effects.
 ##
