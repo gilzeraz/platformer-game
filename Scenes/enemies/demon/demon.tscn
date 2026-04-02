@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b77ovk3xwadhw" path="res://Scenes/demon.gd" id="2_nxnxh"]
 
 [node name="Demon" unique_id=932756905 instance=ExtResource("1_y5dcj")]
+texture_filter = 1
 script = ExtResource("2_nxnxh")
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=273930806]
