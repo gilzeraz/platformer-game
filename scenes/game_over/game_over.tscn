@@ -5,6 +5,8 @@
 [ext_resource type="AudioStream" uid="uid://cx775w1wifvag" path="res://assets/sounds/prepare_for_battle.wav" id="3_ek8ke"]
 [ext_resource type="Texture2D" uid="uid://y1pd88d64gh8" path="res://assets/collectibles/Collectibles/coin/coin_b.png" id="3_eoghk"]
 [ext_resource type="Texture2D" uid="uid://cwawfh55ikjgd" path="res://assets/environment/pixel_clocks.png" id="4_14u15"]
+[ext_resource type="FontFile" uid="uid://nv0vchn7yx2" path="res://assets/environment/monogram.ttf" id="5_3mpp1"]
+[ext_resource type="Texture2D" uid="uid://1dd6fqfgt7cq" path="res://assets/player/char_blue.png" id="6_iqjl0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_14u15"]
 atlas = ExtResource("3_eoghk")
@@ -99,6 +101,106 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbth1"]
+bg_color = Color(0.59892, 0.63, 0.3969, 0.6156863)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 9
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mpp1"]
+atlas = ExtResource("6_iqjl0")
+region = Rect2(0, 280, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbth1"]
+atlas = ExtResource("6_iqjl0")
+region = Rect2(56, 280, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3iia1"]
+atlas = ExtResource("6_iqjl0")
+region = Rect2(112, 280, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pm5n"]
+atlas = ExtResource("6_iqjl0")
+region = Rect2(168, 280, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjx2p"]
+atlas = ExtResource("6_iqjl0")
+region = Rect2(224, 280, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hobic"]
+atlas = ExtResource("6_iqjl0")
+region = Rect2(280, 280, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcoe2"]
+atlas = ExtResource("6_iqjl0")
+region = Rect2(336, 280, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdnea"]
+atlas = ExtResource("6_iqjl0")
+region = Rect2(392, 280, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hf3m"]
+atlas = ExtResource("6_iqjl0")
+region = Rect2(0, 336, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3edm"]
+atlas = ExtResource("6_iqjl0")
+region = Rect2(56, 336, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smh6r"]
+atlas = ExtResource("6_iqjl0")
+region = Rect2(112, 336, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t46n"]
+atlas = ExtResource("6_iqjl0")
+region = Rect2(168, 336, 56, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_af4u8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mpp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbth1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3iia1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pm5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjx2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hobic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcoe2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdnea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hf3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3edm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smh6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t46n")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [node name="GameOver" type="CanvasLayer" unique_id=71681856]
 script = ExtResource("1_ojehl")
 
@@ -151,19 +253,37 @@ offset_bottom = 400.0
 
 [node name="BtnTentar" type="Button" parent="VBoxContainer" unique_id=1905616280]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_3mpp1")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_tbth1")
 text = "RESTART"
 
 [node name="BtnMenu" type="Button" parent="VBoxContainer" unique_id=1312632629]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_3mpp1")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_tbth1")
 text = "MENU"
 
 [node name="BtnDeletar" type="Button" parent="VBoxContainer" unique_id=575655700]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_3mpp1")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_tbth1")
 text = "QUIT"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1020953208]
 stream = ExtResource("3_ek8ke")
 autoplay = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2085149270]
+texture_filter = 1
+position = Vector2(961, 373)
+scale = Vector2(6.5, 6.5)
+sprite_frames = SubResource("SpriteFrames_af4u8")
+animation = &"idle"
+frame = 11
+frame_progress = 1.0
 
 [connection signal="pressed" from="VBoxContainer/BtnTentar" to="." method="_on_btn_tentar_pressed"]
 [connection signal="pressed" from="VBoxContainer/BtnMenu" to="." method="_on_btn_menu_pressed"]

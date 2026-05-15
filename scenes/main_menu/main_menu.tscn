@@ -4,6 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://c3d2i6b0eg310" path="res://assets/environment/main_bg.png" id="2_48xlc"]
 [ext_resource type="AudioStream" uid="uid://n7bwlgbtcmjs" path="res://assets/sounds/title_theme.wav" id="2_ce3w2"]
 [ext_resource type="Texture2D" uid="uid://1dd6fqfgt7cq" path="res://assets/player/char_blue.png" id="4_ce3w2"]
+[ext_resource type="FontFile" uid="uid://nv0vchn7yx2" path="res://assets/environment/monogram.ttf" id="4_wem23"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ovsr"]
+bg_color = Color(0.60636, 0.62, 0.3472, 0.58431375)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5seab"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n45e2"]
 atlas = ExtResource("4_ce3w2")
@@ -101,14 +112,26 @@ layout_mode = 2
 
 [node name="newgame" type="Button" parent="VBoxContainer" unique_id=722041012]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_wem23")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ovsr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_5seab")
 text = "NEW GAME"
 
 [node name="continue" type="Button" parent="VBoxContainer" unique_id=1264657649]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_wem23")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ovsr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_5seab")
 text = "CONTINUE"
 
 [node name="exit" type="Button" parent="VBoxContainer" unique_id=1352261409]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_wem23")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ovsr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_5seab")
 text = "EXIT"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1240141726]

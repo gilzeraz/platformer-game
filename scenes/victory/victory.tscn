@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://1dd6fqfgt7cq" path="res://assets/player/char_blue.png" id="2_7yj50"]
 [ext_resource type="Texture2D" uid="uid://y1pd88d64gh8" path="res://assets/collectibles/Collectibles/coin/coin_b.png" id="3_slr2v"]
 [ext_resource type="Texture2D" uid="uid://cwawfh55ikjgd" path="res://assets/environment/pixel_clocks.png" id="4_f34f5"]
+[ext_resource type="FontFile" uid="uid://nv0vchn7yx2" path="res://assets/environment/monogram.ttf" id="6_gtdts"]
 [ext_resource type="AudioStream" uid="uid://b8etmgump4yfr" path="res://assets/sounds/take_some_rest.wav" id="6_xy5eq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xy5eq"]
@@ -150,6 +151,21 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6pxnt"]
+bg_color = Color(0.78804004, 0.88, 0.3784, 0.50980395)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 19
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4uje"]
+bg_color = Color(0.7882353, 0.8784314, 0.3764706, 0.50980395)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="Victory" type="CanvasLayer" unique_id=2656953]
 script = ExtResource("1_f34f5")
 
@@ -209,14 +225,23 @@ offset_bottom = 400.0
 
 [node name="BtnTentar" type="Button" parent="VBoxContainer" unique_id=880059402]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("6_gtdts")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_6pxnt")
 text = "RESTART"
 
 [node name="BtnMenu" type="Button" parent="VBoxContainer" unique_id=1480689687]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("6_gtdts")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_r4uje")
 text = "MENU"
 
 [node name="BtnDeletar" type="Button" parent="VBoxContainer" unique_id=1849426468]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("6_gtdts")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_r4uje")
 text = "QUIT"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=502055985]

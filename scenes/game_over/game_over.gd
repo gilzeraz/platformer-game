@@ -17,11 +17,13 @@ const MAIN_MENU_SCENE: String = "res://scenes//main_menu/main_menu.tscn"
 @onready var coin_icon: AnimatedSprite2D = $VBoxContainer2/ScoreContainer/AnimatedSprite2D
 @onready var time_label: Label = $VBoxContainer2/HBoxContainer/TimeLabel
 @onready var clock_icon: AnimatedSprite2D = $VBoxContainer2/HBoxContainer/AnimatedSprite2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
 func _ready() -> void:
 	coin_icon.play("idle")
 	clock_icon.play("idle")
+	animated_sprite_2d.play("idle")
 	score_label.text = "SCORE " + str(SaveManager.last_score)
 
 	var t: int = int(SaveManager.last_time)
